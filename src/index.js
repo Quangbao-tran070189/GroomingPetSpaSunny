@@ -34,7 +34,7 @@ const hbs = exphbs.create({
         subtract: (a, b) => a - b,
         range: (start, end) => {
             let array = [];
-            for (let i = start; i <= end; i++) {
+            for (let i = start; i <= end, i++) {
                 array.push(i);
             }
             return array;
@@ -43,6 +43,8 @@ const hbs = exphbs.create({
 });
 
 const port = process.env.PORT || 3000;
+const nodeEnv = process.env.NODE_ENV || 'development';
+console.log(`Running in ${nodeEnv} mode`);
 
 const route = require('./routes/index');
 const db = require('./config/db'); // Đường dẫn tới file db
