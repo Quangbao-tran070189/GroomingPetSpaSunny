@@ -1,0 +1,32 @@
+<div class="mt-4">
+    <div class="row">
+        <h2>Chỉnh Sửa Tin Tức</h2>
+        <form method="POST" action="/newis/{{newi._id}}?_method=PUT" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label">Tựa đề tin tức</label>
+                <input type="text" class="form-control" value="{{newi.name}}" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Nội dung tin tức</label>
+                <textarea class="form-control" id="description" name="description">{{newi.description}}</textarea>
+            </div> 
+            <div class="card-space">
+                <div class="mb-3">
+                    <label for="origin" class="form-label card-origin">Nguồn tin tức</label>
+                    <input type="text" class="form-control" value="{{newi.origin}}" id="origin" name="origin">
+                </div>
+            </div> 
+            <div class="mb-3">
+                <label for="currentImage" class="form-label">Hình tin tức hiện tại</label>
+                <div>
+                    <img src="/img/{{newi.image}}" alt="Current Image" style="max-width: 200px;">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Thay đổi hình tin tức đại diện</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>   
+            <button type="submit" class="btn btn-primary">Lưu lại</button>
+        </form>
+    </div>
+</div>

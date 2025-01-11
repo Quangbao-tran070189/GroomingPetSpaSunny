@@ -1,0 +1,1026 @@
+@charset "UTF-8";
+/*------------------------- Body Margin --------------------------*/
+.body-margin {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+/* Hiệu ứng hover cho các mục menu */
+.nav-link {
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #f39c12; /* Màu vàng cam */
+}
+
+/* Hiệu ứng khi click vào menu Hamburger trên mobile */
+.navbar-toggler {
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler.collapsed {
+  transform: rotate(90deg);
+}
+
+/* Hiệu ứng bóng đổ cho menu */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng cho logo */
+.header-logo img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Màu chữ đậm hơn cho mục Đăng Nhập */
+.nav-link[href="/users/login"] {
+  color: #ff6f61; /* Màu đậm hơn */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link[href="/users/login"]:hover {
+  color: #e04e39; /* Màu đỏ cam khi hover */
+}
+
+/* Hiệu ứng Slide In */
+.slide-in {
+  transform: translateX(-100%);
+  animation: slideInAnimation 1s forwards;
+}
+
+@keyframes slideInAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* Hiệu ứng Bounce */
+.bounce {
+  animation: bounceAnimation 1s infinite;
+}
+
+@keyframes bounceAnimation {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.custom-gallery {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.custom-image-row {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.3s ease-in-out;
+}
+
+.custom-image-row img {
+  width: 10%;
+  margin: 2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.first-row {
+  animation: scrollLeft 30s linear infinite;
+}
+
+.second-row {
+  animation: scrollRight 40s linear infinite;
+}
+
+.third-row {
+  animation: scrollLeft 50s linear infinite;
+}
+
+.custom-image-row img:hover {
+  transform: scale(1.2);
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+/* Media Queries để tăng kích thước ảnh trên mobile */
+@media (max-width: 768px) {
+  .custom-image-row img {
+    width: 30%; /* Tăng kích thước ảnh lên 30% */
+  }
+}
+.custom-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Nền gradient tinh tế */
+  border-radius: 10px; /* Bo góc mềm mại */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.custom-header h4 {
+  font-family: "Lobster", cursive; /* Kiểu chữ nghệ thuật */
+  color: #ffffff; /* Màu chữ trắng */
+  font-size: 2.5em; /* Kích thước chữ lớn */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng chữ */
+}
+
+.custom-header .subheader {
+  font-family: "Open Sans", sans-serif; /* Kiểu chữ mềm mại */
+  color: #f5f5f5; /* Màu chữ nhẹ nhàng */
+  font-size: 1.2em; /* Kích thước chữ trung bình */
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng chữ */
+}
+
+/* Hiệu ứng động mờ dần */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.custom-header h4,
+.custom-header .subheader {
+  animation: fadeIn 2s;
+}
+
+/* Media Queries để điều chỉnh kích thước trên thiết bị di động */
+@media (max-width: 768px) {
+  .custom-header {
+    padding: 15px;
+  }
+  .custom-header h4 {
+    font-size: 2em; /* Kích thước chữ nhỏ hơn */
+  }
+  .custom-header .subheader {
+    font-size: 1em; /* Kích thước chữ nhỏ hơn */
+  }
+}
+/*-------------------- Background Animation ----------------------*/
+.background-animation {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*------------------------- Font Styles --------------------------*/
+.mystery-quest-regular,
+.cedarville-cursive-regular,
+.playball-regular,
+.madimi-one-regular,
+.rammetto-one-regular,
+.caveat-brush-regular,
+.antonio,
+.annie-use-your-telescope-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mystery-quest-regular {
+  font-family: "Mystery Quest", system-ui;
+}
+
+.cedarville-cursive-regular,
+.playball-regular,
+.annie-use-your-telescope-regular,
+.caveat-brush-regular {
+  font-family: cursive;
+}
+
+.madimi-one-regular,
+.rammetto-one-regular,
+.antonio {
+  font-family: sans-serif;
+}
+
+/*---------------------------- Cards -----------------------------*/
+h1 {
+  color: green;
+}
+
+.card-frame {
+  margin-top: 16px;
+  height: 380px;
+}
+
+.card-frame img {
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-body-frame {
+  position: relative;
+}
+
+.card-body-frame a {
+  text-decoration: none;
+  padding-left: -4px;
+  padding-right: -4px;
+}
+
+.card-name {
+  display: flex;
+  color: #08b88f;
+  justify-content: center;
+}
+
+p {
+  position: absolute;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card-button {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 4px;
+  background-color: #23d5ab;
+  border-style: none;
+}
+
+/*-------------------- Store Products --------------------*/
+.btn-fix-separate {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 2px 2px;
+}
+
+.card-frame li {
+  list-style-type: none;
+}
+
+.price-space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-price {
+  color: red;
+}
+
+.card-origin {
+  color: #777b7c;
+  font-size: small;
+}
+
+.card-price,
+.card-origin {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+/*----------------------- Navigation ----------------------*/
+.nav-item,
+.dropdown-menu {
+  list-style: none;
+}
+
+.custom-header {
+  background-color: #08b88f;
+  z-index: 1030;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.custom-header .navbar-nav .nav-link {
+  color: white; /* Set text color to white */
+}
+
+.custom-header .navbar-nav .nav-link:hover {
+  color: #ffebcd; /* Optional: Change color on hover */
+}
+
+.custom-header .navbar-nav {
+  justify-content: center; /* Center align the nav links */
+}
+
+.header-logo img {
+  max-width: 40px;
+  max-height: 40px; /* Adjust size as needed */
+  margin-right: 10px;
+}
+
+.header-logo span {
+  vertical-align: middle;
+  font-size: 1.5rem; /* Adjust size as needed */
+  color: #A01D1E;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.dropdown-menu {
+  z-index: 1050; /* Ensure the dropdowns are above the navbar */
+}
+
+/*----------------------- Animation ----------------------*/
+#content {
+  margin-bottom: 30px;
+}
+
+.promotion-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  position: relative;
+}
+
+.promotion-header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promotion-header span {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 10px;
+  color: #fee006;
+  font-weight: bold;
+  text-shadow: 2px 0 #A01D1E, -2px 0 #A01D1E, 0 2px #A01D1E, 0 -2px #A01D1E, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.custom-carousel-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.custom-carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom-carousel-inner {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.custom-carousel-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.card-text-describe a {
+  text-decoration: none;
+  color: #333;
+}
+
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul#index_cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+ul#index_cards li {
+  background: #fff;
+  height: auto; /* Cho phép chiều cao tự động điều chỉnh theo nội dung */
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #666;
+  padding: 25px 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #000;
+  transform-origin: center bottom;
+}
+
+ul#index_cards li img {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+#card-1, #card-2, #card-3, #card-4, #card-5 {
+  -webkit-transition: all 0.5s ease-in-out;
+}
+
+#card-3 {
+  background-color: #69732B;
+  z-index: 3;
+}
+
+/* Hover States */
+ul#index_cards li:hover {
+  z-index: 4;
+}
+
+ul:hover #card-1 {
+  -webkit-transform: rotate(-20deg) translate(-120px, 10px);
+}
+
+ul:hover #card-1:hover {
+  -webkit-transform: scale(1.1) rotate(-20deg) translate(-120px, 10px);
+}
+
+ul:hover #card-2 {
+  -webkit-transform: rotate(-10deg) translate(-70px, 20px);
+}
+
+ul:hover #card-2:hover {
+  -webkit-transform: scale(1.1) rotate(-10deg) translate(-70px, 20px);
+}
+
+ul:hover #card-3 {
+  -webkit-transform: rotate(0deg) translate(0px, 20px);
+}
+
+ul:hover #card-3:hover {
+  -webkit-transform: scale(1.1) rotate(0deg) translate(0px, 20px);
+}
+
+ul:hover #card-4 {
+  -webkit-transform: rotate(10deg) translate(70px, 20px);
+}
+
+ul:hover #card-4:hover {
+  -webkit-transform: scale(1.1) rotate(10deg) translate(70px, 20px);
+}
+
+ul:hover #card-5 {
+  -webkit-transform: rotate(20deg) translate(120px, 20px);
+}
+
+ul:hover #card-5:hover {
+  -webkit-transform: scale(1.1) rotate(20deg) translate(100px, 20px);
+}
+
+/* Media Query cho mobile */
+@media (max-width: 767px) {
+  #wrapper {
+    flex-direction: column;
+  }
+  ul#index_cards {
+    flex-direction: column;
+  }
+  ul#index_cards li {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+/*Ở đây mình chỉ style cho -webkit các trong demo sẽ có đủ cho -moz và -o*/
+/*-------------------- About-contact --------------------*/
+.about-space {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.about {
+  border-radius: 10px;
+  margin-top: 16px;
+  box-shadow: 20px 20px 10px -10px gray;
+  border: 3px solid #B2E6D4; /* Màu xanh lục nhạt */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.about:hover {
+  border: 2px solid #FFA07A; /* Màu cam nhạt */
+}
+
+.about-header {
+  text-align: center;
+  font-size: 26px;
+  padding: 16px 4px;
+  color: #FFC0CB; /* Màu hồng nhạt */
+  min-height: 100px; /* Điều chỉnh chiều cao tối thiểu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content {
+  text-align: justify;
+  padding: 0 16px 16px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #434242;
+  letter-spacing: 1.5px;
+  flex-grow: 1; /* Đảm bảo nội dung dưới cùng chiều dài */
+}
+
+.about-content-color {
+  color: darkorange;
+  font-size: 25px;
+}
+
+.about-content-text {
+  padding: 8px 0;
+}
+
+.about-content-text span {
+  color: tomato;
+}
+
+.about-content-sdt {
+  margin-top: 70px;
+}
+
+.about-content-infor:hover {
+  border: 1px solid tomato;
+  border-radius: 20px;
+  padding: 5px 16px;
+}
+
+.about-content-infor span {
+  color: tomato;
+}
+
+.about-content-infor a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #a4a2a2;
+}
+
+.about-separate {
+  display: flex;
+  justify-content: center;
+}
+
+.about-separate img {
+  width: 31%;
+}
+
+.product-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.product-image {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-details {
+  padding-left: 20px;
+}
+
+.product-details h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.product-footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 15px;
+  color: #007bff;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.product-meta p {
+  margin: 0;
+  color: #777;
+}
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-height: 500px; /* Bạn có thể điều chỉnh chiều cao tối đa của hình ảnh */
+}
+
+/* ----- Newi Styles ----- */
+body {
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+/* Container adjustment for mobile phones */
+.container {
+  width: calc(100% - 8px); /* 4px padding on each side */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+header h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 3em;
+  color: #333;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Styling for each news item */
+.news-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.news-row {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Small row for mobile layout */
+.news-row-small {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Styling for the news image */
+.news-img {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.news-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Styling for the news name */
+.news-name {
+  flex: 2;
+}
+
+.news-name h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Styling for the news description */
+.news-description {
+  margin: 10px 0;
+  order: 1; /* Default order */
+}
+
+.news-description h5 {
+  margin: 0;
+  font-size: 1em;
+  color: #666;
+}
+
+/* Styling for the news origin */
+.news-origin {
+  text-align: right;
+}
+
+.news-origin {
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Media query for desktop layout */
+@media (min-width: 768px) {
+  .news-row {
+    flex-direction: row;
+    align-items: center;
+  }
+  .news-img {
+    flex: 1;
+    margin-right: 20px;
+  }
+  .news-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    padding: 10px;
+  }
+  /* Swap positions of name and description on desktop */
+  .news-description {
+    order: 2; /* Change order */
+    flex-grow: 1;
+  }
+  .news-name {
+    order: 1; /* Change order */
+  }
+  .news-origin {
+    order: 3;
+    align-self: flex-end;
+    text-align: right;
+  }
+}
+/* Styling for each news item */
+.news-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-row {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+/* Row nhỏ */
+.news-row-small {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Styling for the news image */
+.news-img {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.news-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Styling for the news name */
+.news-name {
+  flex: 2;
+}
+
+.news-name h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Styling for the news description */
+.news-description {
+  margin: 10px 0;
+}
+
+.news-description h5 {
+  margin: 0;
+  font-size: 1em;
+  color: #666;
+}
+
+/* Styling for the news origin */
+.news-origin {
+  text-align: right;
+}
+
+.news-origin {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.preprod-product-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.preprod-product-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.preprod-col-left {
+  flex: 0 0 30%;
+  padding: 10px;
+}
+
+.preprod-col-right {
+  flex: 0 0 70%;
+  padding: 10px;
+}
+
+.preprod-col-right h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.preprod-price-origin-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preprod-price-col, .preprod-origin-col {
+  flex: 1;
+}
+
+.preprod-price-col h5, .preprod-origin-col h5 {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #cf0606;
+}
+
+.preprod-origin-col h5 {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #777;
+}
+
+.preprod-description {
+  margin-top: 10px;
+}
+
+.preprod-description h5 {
+  margin: 0;
+  color: #555;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.custom-hr {
+  border-top: 3px solid #1f04b6; /* Điều chỉnh độ dày và màu sắc */
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.row-eq-height {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.custom-image-container {
+  padding: 5px;
+  border-radius: 10px; /* Độ bo tròn */
+}
+
+.custom-img-fluid {
+  width: 100%;
+  height: 500px; /* Chiều cao cố định cho tất cả các hình */
+  object-fit: cover; /* Giữ tỷ lệ ảnh và cắt phần dư */
+  border-radius: 10px; /* Đảm bảo hình ảnh cũng được bo tròn theo column */
+}
+
+@media (max-width: 768px) {
+  .row-eq-height {
+    flex-direction: column;
+  }
+  .carousel-item {
+    height: 500px; /* Đảm bảo chiều cao cố định cho các mục trong trình chiếu */
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Bo tròn góc cho ảnh trong chế độ mobile */
+  }
+  .col-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .custom-col-6ths {
+    width: 50%;
+  }
+}
+@media (min-width: 769px) {
+  .col-md-4 {
+    flex: 0 0 33.3333%;
+    max-width: 30%;
+  }
+}
+@media (min-width: 992px) {
+  .no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .col-lg-4 {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .custom-col-5ths {
+    width: 20%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .col-md-6 {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .custom-col-4ths {
+    flex: 1;
+    max-width: 25%;
+    box-sizing: border-box;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

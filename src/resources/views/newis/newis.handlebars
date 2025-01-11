@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện đẹp mắt</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+        }
+
+        /* Main Container */
+        .mt-4 {
+            margin-top: 1.5rem;
+        }
+
+        .newis-main {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            position: relative;
+        }
+
+        /* Name Section */
+        .newi-name h3 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Image Section */
+        .newi-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        /* Description Section */
+        .newi-description h5 {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* Origin Section */
+        .newi-origin {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+
+        .newi-origin h5 {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .newis-main {
+                padding: 15px;
+            }
+
+            .newi-name h3 {
+                font-size: 1.5rem;
+            }
+
+            .newi-description h5,
+            .newi-origin h5 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mt-4">
+        <div class="newis-main">
+            <div class="newi-name">
+                <h3>{{newi.name}}</h3>
+            </div>
+            <div class="newi-img">
+                <img src="/img/{{newi.image}}" alt="">
+            </div>
+            <div class="newi-description">
+                <h5>{{newi.description}}</h5>
+            </div>
+            <div class="newi-origin">
+                <h5>{{newi.origin}}</h5>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

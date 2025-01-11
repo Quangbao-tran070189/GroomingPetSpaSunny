@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Tin Chăm Sóc Thú Cưng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .newis-header {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px; /* Tạo khoảng cách phía trên */
+            background-color: #ffffff; /* Màu nền trắng */
+            border: 2px solid #007bff; /* Đường viền màu xanh */
+            border-radius: 10px; /* Bo tròn các góc */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Đổ bóng */
+            color: #007bff; /* Màu chữ xanh */
+        }
+        .newis-header h2 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .news-item {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .news-img {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Chiều cao cố định cho khung hình ảnh */
+            overflow: hidden;
+        }
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cắt hình ảnh để vừa với khung */
+        }
+        .news-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(255, 182, 193, 0.8); /* Màu nền hồng nhạt */
+            color: white;
+            text-align: center;
+        }
+        .news-name h2 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #333; /* Màu chữ đậm */
+        }
+        .news-description {
+            padding: 10px;
+            color: #555;
+            position: relative;
+            flex-grow: 1;
+        }
+        .news-description textarea {
+            width: 100%;
+            height: 100px; /* Chiều cao cố định cho textarea */
+            border: none;
+            resize: none;
+            overflow: hidden;
+            background: transparent;
+            color: #555;
+            font-family: 'Roboto', sans-serif;
+        }
+        .read-more {
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: white;
+            padding: 0 5px;
+        }
+        .expanded .news-description textarea {
+            height: auto; /* Hiển thị đầy đủ nội dung */
+        }
+        .expanded .read-more {
+            display: none;
+        }
+        .news-origin {
+            padding: 10px;
+            color: #888;
+            border-top: 1px solid #e0e0e0;
+            background-color: #f1f1f1;
+            text-align: right; /* Canh phải */
+        }
+        .pagination {
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="newis-header">
+        <h2>Bảng Tin Chăm Sóc Thú Cưng</h2>
+    </header>
+    <div class="container">
+        <div class="row">
+            {{#each newis}}
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="news-item">
+                    <div class="news-img">
+                        <a href="/newis/{{this.slug}}">
+                        <img src="/img/{{this.image}}" alt="{{this.name}}">
+                        </a>
+                        <div class="news-name">
+                            <a href="/newis/{{this.slug}}">
+                            <h2>{{this.name}}</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-description">
+                        <textarea readonly>{{this.description}}</textarea>
+                    </div>
+                    <a href="/newis/{{this.slug}}">
+                    <div class="read-more" onclick="toggleDescription(this)">Xem thêm</div>
+                    </a>
+                    <div class="news-origin">
+                        <strong>By:</strong> {{this.origin}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                {{#if (gt currentPage 1)}}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{subtract currentPage 1}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {{/if}}
+                {{#each (range 1 totalPages) as |page|}}
+                <li class="page-item {{#if (eq page currentPage)}}active{{/if}}">
+                    <a class="page-link" href="?page={{page}}">{{page}}</a>
+                </li>
+                {{/each}}
+                {{#if (lt currentPage totalPages)}}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{add currentPage 1}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {{/if}}
+            </ul>
+        </nav>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleDescription(element) {
+            const newsItem = element.closest('.news-item');
+            newsItem.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>

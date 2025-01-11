@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Pet Spa</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+    .custom-body {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      background: #d7ffde;
+      font-family: "Varela Round", sans-serif;
+    }
+
+    .custom-html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+      padding: 0;
+      margin: 0;
+      letter-spacing: 1.1px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffcc00 !important;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      transition: color 0.3s ease-in-out;
+    }
+
+    .navbar-toggler {
+      transition: transform 0.3s ease-in-out;
+      background-color: #ffcc00;
+      border: none;
+    }
+
+    .navbar-toggler:hover {
+      transform: rotate(90deg);
+    }
+
+    .navbar-toggler-icon {
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    }
+
+    .custom-header {
+      animation: slideDown 0.5s forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .header-logo:hover {
+      animation: none;
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-item.slide-in {
+      animation: slideIn 0.5s forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .dropdown-menu {
+      animation: slideFadeIn 0.3s forwards;
+      transform-origin: top center;
+    }
+
+    @keyframes slideFadeIn {
+      from {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar-collapse .dropdown-menu {
+        position: static;
+        float: none;
+      }
+
+      .navbar-collapse .dropdown-item {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body class="custom-body">
+  <nav class="navbar navbar-expand-lg custom-header position-sticky top-0 w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand mystery-quest-regular" href="/">
+        <div class="header-logo">
+          <img src="/img/NarTop-logo.png" alt="">
+          <span>Sunny Pet Spa</span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center caveat-brush-regular" id="navbarSupportedContent">
+        <ul class="navbar-nav text-white text-center">
+          <li class="nav-item text-white slide-in">
+            <a class="nav-link active" aria-current="page" href="/">Trang Chủ</a>
+          </li>
+          <li class="nav-item text-white slide-in">
+            <a class="nav-link" href="/abouts">Giới Thiệu</a>
+          </li>
+          <li class="nav-item text-white slide-in">
+            <a class="nav-link" href="/newis">Tin Tức</a>
+          </li>
+          <li class="nav-item dropdown slide-in">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Thực Phẩm & Phụ Kiện
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/products">Thực Phẩm</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/stuffs">Phụ Kiện</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/medicines">Dược Phẩm Thú Y</a></li>
+            </ul>
+          </li>
+        </ul>
+        {{#if user}}
+        <li class="nav-item dropdown text-white slide-in">
+          <a class="nav-link dropdown-toggle header-login-name-right" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Chào {{#each user}} {{this.name}} {{/each}}
+          </a>
+          <ul class="dropdown-menu">
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/products/productcreate">Đăng Thực Phẩm</a></li>
+            <li><a class="dropdown-item" href="me/stored/products">Chỉnh sửa Thực Phẩm</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/stuffs/stuffcreate">Đăng Phụ Kiện</a></li>
+            <li><a class="dropdown-item" href="/me/stored/stuffs">Chỉnh sửa Phụ Kiện</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/medicines/medicinecreate">Đăng Sản Phẩm Thú Y</a></li>
+            <li><a class="dropdown-item" href="/me/stored/medicines">Chỉnh sửa Sản Phẩm Thú Y</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/newis/newicreate">Đăng Tin Tức</a></li>
+            <li><a class="dropdown-item" href="/me/stored/newis">Chỉnh sửa Tin Tức</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/admin/users">Tài khoản</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/users/logout">Đăng Xuất</a></li>
+          </ul>
+        </li>
+        {{else}}
+        <li class="nav-item text-white slide-in">
+          <a class="nav-link" href="/users/login">Đăng Nhập</a>
+        </li>
+        {{/if}}
+      </div>
+    </div>
+  </nav>
+
+  <!-- Slicer -->
+  <div id="customCarouselExampleSlidesOnly" class="custom-carousel slide" data-bs-ride="carousel">
+    <div class="custom-carousel-inner">
+      <div class="custom-carousel-item active">
+        <img src="/img/slicer2.jpg" class="custom-carousel-img d-block w-100" alt="Image 1">
+      </div>
+      <div class="custom-carousel-item">
+        <img src="/img/slicer3.jpg" class="custom-carousel-img d-block w-100" alt="Image 2">
+      </div>
+    </div>
+  </div>
+  <!-- End Slicer -->
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

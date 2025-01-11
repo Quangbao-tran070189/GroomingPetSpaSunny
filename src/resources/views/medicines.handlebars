@@ -1,0 +1,32 @@
+<!-- stuffs Page-->
+
+<div class="mt-4">
+    <div id="contact" class="promotion-header background-animation row">
+    <div class="col-12">
+        <span class="caveat-brush-regular">Sản Phẩm Y Tế Cho Pét</span> 
+    </div>
+</div>
+    <div class="row">
+        {{#each medicines}}
+        <div class="custom-col-5ths custom-col-4ths custom-col-6ths card-frame">
+            <div class="card card-frame">
+                <a href="/medicines/{{this.slug}}">
+                    <img src="/img/{{this.image}}" class="card-img-top" alt="...">
+                </a>
+                <div class="card-body card-body-frame">
+                    <a href="/medicines/{{this.slug}}">
+                        <h5 class="card-title card-name">{{this.name}}</h5>
+                    </a>
+                    <div class="price-space">
+                        <div class="card-text card-price">{{this.price}}</div>
+                        <div class="card-text card-origin">{{this.origin}}</div>
+                    </div>
+                    
+                    <p class="card-text card-description">{{this.description}}</p>
+                <a href="#" class="btn btn-primary card-button">Có bán tại shop</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

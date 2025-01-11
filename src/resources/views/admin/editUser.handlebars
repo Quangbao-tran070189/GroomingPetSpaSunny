@@ -1,0 +1,45 @@
+
+
+<div class="container">
+    <h2>Quản lý người dùng</h2>
+    <a href="/admin/users/add" class="btn btn-primary mb-3">Thêm người dùng</a>
+    {{#if success_msg}}
+        <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+    {{#if error_msg}}
+        <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Vai trò</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{admin.name}}</td>
+                <td>{{admin.email}}</td>
+                <td>{{admin.role}}</td>
+                <td>
+                    <a href="/admin/edit" class="btn btn-warning btn-sm">Chỉnh sửa thông tin</a>
+                </td>
+            </tr>
+            {{#each users}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.role}}</td>
+                <td>
+                    <a href="/admin/users/edit/{{this._id}}" class="btn btn-warning btn-sm">Chỉnh sửa</a>
+                    <form action="/admin/users/delete/{{this._id}}" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

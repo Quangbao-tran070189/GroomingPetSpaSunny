@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Sunny Header */
+    .sunny-header {
+      background-color: #f8f9fa; /* Màu nền nhạt */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Bóng nhẹ */
+      margin-bottom: 20px;
+    }
+
+    .sunny-header h4 {
+      font-family: 'Mystery Quest', cursive; /* Đổi font chữ */
+      color: #333; /* Màu chữ đậm */
+    }
+
+    .sunny-header h5.subheader {
+      font-family: 'Caveat Brush', cursive; /* Đổi font chữ */
+      color: #666; /* Màu chữ nhẹ hơn */
+      margin-top: 10px;
+    }
+
+    /* Logo Animation */
+    .header-logo {
+      display: flex;
+      align-items: center;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Navbar Link Hover Effect */
+    .nav-link:hover {
+      color: #ffcc00;
+      transition: color 0.3s ease-in-out;
+    }
+
+    /* Navbar Toggler Animation */
+    .navbar-toggler {
+      transition: transform 0.3s ease-in-out;
+      background-color: #ffcc00; /* Đổi màu nền của nút */
+      border: none; /* Loại bỏ viền */
+    }
+    .navbar-toggler:hover {
+      transform: rotate(90deg);
+    }
+
+    .navbar-toggler-icon {
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+      /* Đổi màu biểu tượng thành màu trắng */
+    }
+
+    /* Slide-in Animation */
+    .slide-in {
+      animation: slideIn 0.5s forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Ensure dropdown menu items are visible on mobile */
+    @media (max-width: 992px) {
+      .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar-collapse .dropdown-menu {
+        position: static;
+        float: none;
+      }
+
+      .navbar-collapse .dropdown-item {
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="mt-4 sunny-header">
+        <h4 class="text-center">Cùng xem với Sunny Spa nhé</h4>
+        <h5 class="text-center subheader">Dưới đây là một số hình ảnh mà Sunny Pet Spa đã lưu giữ lại trong quá trình phục vụ khách hàng và các bé Cún trong thời gian qua.</h5>
+    </div>
+
+  <div class="custom-gallery">
+    <div class="mt-4">
+
+    <div class="custom-image-row first-row">
+      <!-- Dòng thứ nhất -->
+      <img src="/img/dong1hinh1.jpg" alt="Image 1">
+      <img src="/img/dong1hinh2.jpg" alt="Image 2">
+      <img src="/img/dong1hinh3.jpg" alt="Image 3">
+      <img src="image4.jpg" alt="Image 4">
+      <img src="image5.jpg" alt="Image 5">
+      <img src="image6.jpg" alt="Image 6">
+      <img src="image7.jpg" alt="Image 7">
+      <img src="image8.jpg" alt="Image 8">
+      <img src="image9.jpg" alt="Image 9">
+      <img src="image10.jpg" alt="Image 10">
+    </div>
+    </div>
+    <div class="mt-4">
+
+    <div class="custom-image-row second-row">
+      <!-- Dòng thứ hai -->
+      <img src="/img/dong2hinh1.jpg" alt="Image 11">
+      <img src="/img/dong2hinh2.jpg" alt="Image 12">
+      <img src="/img/dong2hinh3.jpg" alt="Image 13">
+      <img src="image14.jpg" alt="Image 14">
+      <img src="image15.jpg" alt="Image 15">
+      <img src="image16.jpg" alt="Image 16">
+      <img src="image17.jpg" alt="Image 17">
+      <img src="image18.jpg" alt="Image 18">
+      <img src="image19.jpg" alt="Image 19">
+      <img src="image20.jpg" alt="Image 20">
+    </div>
+    </div>
+    <div class="mt-4">
+
+    <div class="custom-image-row third-row">
+      <!-- Dòng thứ ba -->
+      <img src="image21.jpg" alt="Image 21">
+      <img src="image22.jpg" alt="Image 22">
+      <img src="image23.jpg" alt="Image 23">
+      <img src="image24.jpg" alt="Image 24">
+      <img src="image25.jpg" alt="Image 25">
+      <img src="image26.jpg" alt="Image 26">
+      <img src="image27.jpg" alt="Image 27">
+      <img src="image28.jpg" alt="Image 28">
+      <img src="image29.jpg" alt="Image 29">
+      <img src="image30.jpg" alt="Image 30">
+    </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
