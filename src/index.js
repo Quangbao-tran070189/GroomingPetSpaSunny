@@ -34,7 +34,7 @@ const hbs = exphbs.create({
         subtract: (a, b) => a - b,
         range: (start, end) => {
             let array = [];
-            for (let i = start; i <= end, i++) {
+            for (let i = start; i <= end; i++) {
                 array.push(i);
             }
             return array;
