@@ -7,8 +7,10 @@
     "beautiful": "prettier --single-quote --trailing-comma all --write 'src/**/*.{js,json,scss}'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node src/index.js",
-    "watch": "sass --watch src/resources/scss:src/public/css"
-  },
+    "watch": "sass --watch src/resources/scss:src/public/css",
+    "start": "node src/index.js"
+}
+,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Quangbao-tran070189/sunnypetspa.git"
