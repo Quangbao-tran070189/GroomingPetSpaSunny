@@ -12,17 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Quangbao-tran070189/sunnypetspa.git"
+    "url": "git+https://github.com/Quangbao-tran070189/GroomingPetSpaSunny.git"
   },
   "author": "BaoQuang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Quangbao-tran070189/sunnypetspa/issues"
+    "url": "https://github.com/Quangbao-tran070189/GroomingPetSpaSunny/issues"
   },
-  "homepage": "https://github.com/Quangbao-tran070189/sunnypetspa#readme",
+  "homepage": "https://github.com/Quangbao-tran070189/GroomingPetSpaSunny#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.1.0",
     "connect-mongodb-session": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
@@ -46,6 +47,6 @@
     "sass": "^1.83.0"
   },
   "engines": {
-    "node": "22.x"
+    "node": "23.4.0"
   }
 }

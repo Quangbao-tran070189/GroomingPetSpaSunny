@@ -5,9 +5,11 @@ const morgan = require('morgan');
 const methodOverride = require('method-override');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
-const cors = require('cors'); // Thêm dòng này
+const cors = require('cors');
 
 const app = express();
 
@@ -48,7 +50,7 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 console.log(`Running in ${nodeEnv} mode`);
 
 const route = require('./routes/index');
-const db = require('./config/db'); // Đường dẫn tới file db
+const db = require('./config/db');
 
 // Passport Config
 require('./config/passport')(passport);
@@ -72,15 +74,23 @@ app.use(methodOverride('_method'));
 app.use(morgan('combined'));
 
 // CORS Middleware
-app.use(cors()); // Thêm dòng này
+app.use(cors());
 
 // Express session
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI,
+    mongooseConnection: mongoose.connection,
+    collectionName: 'sessions'
+  }),
   cookie: {
-    maxAge: 1000 * 60 * 60 * 24 // 1 day
+    maxAge: 1000 * 60 * 60 * 24, // 1 day
+    secure: false, // Đảm bảo rằng giá trị này chỉ là false khi bạn đang phát triển
+    httpOnly: true,
+    sameSite: 'strict'
   }
 }));
 
