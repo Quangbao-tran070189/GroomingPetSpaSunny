@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
@@ -8,6 +7,8 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
+const cors = require('cors'); // Thêm dòng này
+
 const app = express();
 
 const hbs = exphbs.create({
@@ -69,6 +70,9 @@ app.use(methodOverride('_method'));
 
 // HTTP logger
 app.use(morgan('combined'));
+
+// CORS Middleware
+app.use(cors()); // Thêm dòng này
 
 // Express session
 app.use(session({
