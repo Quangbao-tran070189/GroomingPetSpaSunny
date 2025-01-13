@@ -28,25 +28,27 @@ class MedicineController {
     medicinecreateShow(req, res, next) {
         res.render('./medicines/medicinecreate');
     }
-
-    // [POST]  medicines/store
-    medicinestore(req, res, next) { 
-        const medicineData = { 
-          name: req.body.name, 
-          description: req.body.description, 
-          price: req.body.price, 
-          origin: req.body.origin, 
-          image: req.file.filename 
-        }; 
-        const medicine = new Medicine(medicineData); 
-        medicine.save() 
-        .then(() => res.redirect('/medicines')) 
-        .catch((err) => {
-          console.log('Error while saving medicine:', err);
-          next(err);
-        });
-    }
-
+    
+      // [POST] medicines/store
+      medicinestore(req, res, next) {
+        console.log('Received POST request:', req.body);
+    
+        const medicineData = {
+          name: req.body.name,
+          description: req.body.description,
+          price: req.body.price,
+          origin: req.body.origin,
+          image: req.body.image // URL hình ảnh từ form
+        };
+        const medicine = new Medicine(medicineData);
+        medicine.save()
+          .then(() => res.redirect('/medicines'))
+          .catch((err) => {
+            console.log('Error while saving medicine:', err);
+            next(err);
+          });
+      }
+    
     //[GET]  /products/:id/product-edit
     medicineEdit(req, res, next) {
         Medicine.findById(req.params.id)
