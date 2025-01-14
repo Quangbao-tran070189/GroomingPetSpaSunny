@@ -1,16 +1,14 @@
 const express = require('express');
-//const app = express();
 const router = express.Router();
 
 const newiController = require('../app/controllers/NewiController');
-const upload = require('../middleware/uploadMiddleware');
+const upload = require('../middleware/uploadMiddleware'); // Middleware để upload image
 
-//ProductsController.index
-
+// Định tuyến
 router.get('/newicreate', newiController.newicreateShow);
-router.post('/store', upload.single('image'), newiController.newistore);
+router.post('/store', upload('newis').single('image'), newiController.newistore);
 router.get('/:id/newi-edit', newiController.newiEdit);
-router.put('/:id', upload.single('image'), newiController.newiUpdate);
+router.put('/:id', upload('newis').single('image'), newiController.newiUpdate);
 router.delete('/:id', newiController.newiDelete);
 router.get('/:slug', newiController.newiShow);
 router.get('/', newiController.newi);

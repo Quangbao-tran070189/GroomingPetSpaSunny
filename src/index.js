@@ -14,35 +14,35 @@ const cors = require('cors');
 const app = express();
 
 const hbs = exphbs.create({
-    partialsDir: path.join(__dirname, 'resources', 'views', 'partials'),
-    extname: '.handlebars',
-    helpers: {
-        ifCond: function(v1, operator, v2, options) {
-            switch (operator) {
-                case '==': return (v1 == v2) ? options.fn(this) : options.inverse(this);
-                case '===': return (v1 === v2) ? options.fn(this) : options.inverse(this);
-                case '!=': return (v1 != v2) ? options.fn(this) : options.inverse(this);
-                case '!==': return (v1 !== v2) ? options.fn(this) : options.inverse(this);
-                case '<': return (v1 < v2) ? options.fn(this) : options.inverse(this);
-                case '<=': return (v1 <= v2) ? options.fn(this) : options.inverse(this);
-                case '>': return (v1 > v2) ? options.fn(this) : options.inverse(this);
-                case '>=': return (v1 >= v2) ? options.fn(this) : options.inverse(this);
-                default: return options.inverse(this);
-            }
-        },
-        gt: (a, b) => a > b,
-        lt: (a, b) => a < b,
-        eq: (a, b) => a == b,
-        add: (a, b) => a + b,
-        subtract: (a, b) => a - b,
-        range: (start, end) => {
-            let array = [];
-            for (let i = start; i <= end; i++) {
-                array.push(i);
-            }
-            return array;
-        }
+  partialsDir: path.join(__dirname, 'resources', 'views', 'partials'),
+  extname: '.handlebars',
+  helpers: {
+    ifCond: function (v1, operator, v2, options) {
+      switch (operator) {
+        case '==': return (v1 == v2) ? options.fn(this) : options.inverse(this);
+        case '===': return (v1 === v2) ? options.fn(this) : options.inverse(this);
+        case '!=': return (v1 != v2) ? options.fn(this) : options.inverse(this);
+        case '!==': return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+        case '<': return (v1 < v2) ? options.fn(this) : options.inverse(this);
+        case '<=': return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+        case '>': return (v1 > v2) ? options.fn(this) : options.inverse(this);
+        case '>=': return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+        default: return options.inverse(this);
+      }
+    },
+    gt: (a, b) => a > b,
+    lt: (a, b) => a < b,
+    eq: (a, b) => a == b,
+    add: (a, b) => a + b,
+    subtract: (a, b) => a - b,
+    range: (start, end) => {
+      let array = [];
+      for (let i = start; i <= end; i++) {
+        array.push(i);
+      }
+      return array;
     }
+  }
 });
 
 const port = process.env.PORT || 3000;
@@ -102,7 +102,7 @@ app.use(passport.session());
 app.use(flash());
 
 // Global variables for flash messages and user
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');

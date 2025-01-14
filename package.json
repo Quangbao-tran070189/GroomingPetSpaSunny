@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Quangbao-tran070189/GroomingPetSpaSunny#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.21.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.1.0",
     "connect-mongodb-session": "^5.0.0",
@@ -33,9 +34,10 @@
     "method-override": "^3.0.0",
     "mongoose": "^8.9.1",
     "mongoose-slug-generator": "^1.0.4",
-    "mongoose-slug-updater": "^3.3.0",
+    "mongoose-slug-updater": "^2.2.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0"
   },
