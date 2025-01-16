@@ -26,7 +26,7 @@ class StuffController {
   stuffShow(req, res, next) {
     Stuff.findOne({ slug: req.params.slug })
       .then(stuff => 
-        res.render('./stuffs/stuff.handlebars', { stuff: mongooseToObject(stuff) })
+        res.render('./stuffs/stuffs.handlebars', { stuff: mongooseToObject(stuff) })
       )
       .catch(next);
   }
