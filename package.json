@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node src/index.js",
     "watch": "sass --watch src/resources/scss:src/public/css",
-    "start": "node src/index.js"
+    "start": "node --inspect src/index.js"
   },
   "repository": {
     "type": "git",

@@ -402,8 +402,145 @@ p {
   text-decoration: none;
   color: #333;
 }
-//-------Home: End Product
 
+//***Home product
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Audiowide', cursive;
+}
+
+.body-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    //background: #060c21;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    background: #060c21;
+    transition: .5s;
+}
+
+.box:hover {
+    height: 400px; /* Hiệu ứng phóng to khung */
+}
+
+.imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.imgBx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh luôn vừa khung */
+    border-radius: 10px;
+    opacity: .3;
+    transition: .5s;
+}
+
+.box:hover .imgBx img {
+    opacity: 1;
+}
+
+.box:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -1;
+}
+
+.box:after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #fff;
+    z-index: -2;
+    filter: blur(40px);
+}
+
+.box:before,
+.box:after {
+    background: linear-gradient(235deg, #2196f3, #010615, #F00000);
+}
+
+.box:nth-child(2):before,
+.box:nth-child(2):after {
+    background: linear-gradient(235deg, #2196f3, #010615, #F00000);
+}
+
+.box:nth-child(3):before,
+.box:nth-child(3):after {
+    background: linear-gradient(235deg, #772aff, #010615, #2196f3);
+}
+
+.content {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 90px;
+    background: rgba(0, 0, 0, 0.04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.box:hover .content {
+    opacity: 1;
+}
+
+.content h2 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.content h2 span {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+//***End home product
+
+//-------Home: End Product
+.slicer img {
+  object-fit: cover;
+}
 //----Home - Images Area
 #wrapper {
   display: flex;
@@ -925,6 +1062,33 @@ img {
 }
 
 //-----End Newis
+
+// home-product area 
+.card-bg {
+  background: linear-gradient(90deg, 
+    rgba(242,241,133,0.8379726890756303) 0%, 
+    rgba(19,205,84,0.7483368347338936) 35%, 
+    rgba(0,212,255,0.908000700280112) 100%);
+}
+.card-bg img {
+  padding: -4px;
+  object-fit: cover;
+}
+
+//---------
+.home-product-img {
+  width: 100%;
+}
+.home-product-img img {
+  width: 100%;
+  padding: 4px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.home-product-container {
+  width: 70%;
+}
+
 //-----------Home
 .mt-4 { margin-top: 1.5rem; } 
 .row-eq-height { 
@@ -987,6 +1151,6 @@ img {
       flex: 1; 
       max-width: 25%; 
       box-sizing: border-box; 
-      //padding: 2px; 
+      padding: 2px; 
     } 
   }
