@@ -13,26 +13,15 @@ cloudinary.config({
 class StuffController {
   // GET /stuffs
   stuff(req, res, next) {
-    const page = parseInt(req.query.page) || 1;
-    const limit = 4;
-    const skip = (page - 1) * limit;
-
     Stuff.find({})
-      .skip(skip)
-      .limit(limit)
-      .then(stuffs => {
-        console.log(stuffs); // Kiểm tra dữ liệu
-        Stuff.countDocuments().then(count => {
-          res.render('stuffs', {
-            stuffs: multipleMongooseToObject(stuffs),
-            currentPage: page,
-            totalPages: Math.ceil(count / limit)
-          });
-        });
-      })
-      .catch(next);
-  }
+          .then(stuffs => {
+            res.render('stuffs', {
+              stuffs: multipleMongooseToObject(stuffs)
+            });
+          })
+          .catch(next);
 
+  }
   // GET /stuffs/:slug
   stuffShow(req, res, next) {
     Stuff.findOne({ slug: req.params.slug })
@@ -77,7 +66,7 @@ class StuffController {
   // GET /stuffs/:id/stuff-edit
   stuffEdit(req, res, next) {
     Stuff.findById(req.params.id)
-      .then(stuff => res.render('stuffs/stuff-edit', {
+      .then(stuff => res.render('stuffs/stuffs-edit', {
         stuff: mongooseToObject(stuff)
       }))
       .catch(next);

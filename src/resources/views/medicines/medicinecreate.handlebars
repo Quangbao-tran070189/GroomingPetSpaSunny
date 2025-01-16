@@ -2,7 +2,7 @@
     <div class="mt-4">
         <div class="row">
             <h2>Thêm Sản Phẩm Y Tế</h2>
-            <form method="POST" action="/medicines/store">
+            <form method="POST" action="/medicines/store" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="name" class="form-label">Tên sản phẩm</label>
                     <input type="text" class="form-control" id="name" name="name">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">URL Hình ảnh sản phẩm</label>
-                    <input type="text" class="form-control" id="image" name="image">
+                    <input type="file" class="form-control" id="image" name="image">
                 </div>
                 <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
             </form>
