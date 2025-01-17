@@ -244,6 +244,10 @@ h1 {
   margin-top: 16px;
   height: 380px;
 }
+.card-frame:hover {
+  margin: 4px;
+  border: 2px solid #dd0db0;
+}
 .card-frame img {
   height: 150px;
   object-fit: cover;
@@ -856,7 +860,7 @@ header h1 {
 .news-img {
   flex: 1;
   margin-right: 10px;
-  height: 100px; /* Đảm bảo chiều cao cố định cho khung hình ảnh */
+  height: 200px; /* Đảm bảo chiều cao cố định cho khung hình ảnh */
 }
 
 .news-img img {
