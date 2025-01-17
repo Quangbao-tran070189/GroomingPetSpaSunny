@@ -244,6 +244,11 @@ h1 {
   height: 380px;
 }
 
+.card-frame:hover {
+  margin: 4px;
+  border: 2px solid #dd0db0;
+}
+
 .card-frame img {
   height: 150px;
   object-fit: cover;
@@ -379,9 +384,9 @@ p {
   text-align: center;
   font-size: 2rem;
   letter-spacing: 10px;
-  color: #fee006;
+  color: #eed93e;
   font-weight: bold;
-  text-shadow: 2px 0 #A01D1E, -2px 0 #A01D1E, 0 2px #A01D1E, 0 -2px #A01D1E, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  text-shadow: 2px 0 #f36c6c, -2px 0 #f36c6c, 0 2px #f36c6c, 0 -2px #f36c6c, 1px 1px #f36c6c, -1px -1px #f36c6c, 1px -1px #f36c6c, -1px 1px #f36c6c;
 }
 
 .custom-carousel-img {

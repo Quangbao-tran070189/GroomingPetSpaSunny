@@ -176,15 +176,7 @@
         function toggleDescription(element) {
             const newsItem = element.closest('.news-item');
             newsItem.classList.toggle('expanded');
-            }
-
-            document.querySelectorAll('.read-more').forEach(el => {
-                el.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    toggleDescription(this);
-            });
-        });
-
+        }
     </script>
 </body>
 </html>
