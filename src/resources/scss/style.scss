@@ -394,6 +394,13 @@ p {
   max-width: 100%;
 }
 
+.audiowide-regular {
+  font-family: "Audiowide", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
 //-----------End Slicer
 
@@ -827,6 +834,10 @@ header h1 {
   flex-direction: column;
   padding: 10px;
 }
+.news-item:hover {
+  margin: 4px;
+  border: 2px solid #dd0db0;
+}
 
 .news-row {
   display: flex;
@@ -845,13 +856,16 @@ header h1 {
 .news-img {
   flex: 1;
   margin-right: 10px;
+  height: 100px; /* Đảm bảo chiều cao cố định cho khung hình ảnh */
 }
 
 .news-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain; /* Hoặc sử dụng object-fit: cover; nếu muốn cắt hình ảnh theo khung */
   border-radius: 8px;
 }
+
 
 /* Styling for the news name */
 .news-name {

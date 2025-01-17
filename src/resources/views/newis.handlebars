@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bảng Tin Chăm Sóc Thú Cưng</title>
+    <title>Cách Chăm Thú Cưng | Bảng Tin Chăm Sóc Thú Cưng</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -115,7 +115,7 @@
 </head>
 <body>
     <header class="newis-header">
-        <h2>Bảng Tin Chăm Sóc Thú Cưng</h2>
+        <h2 class="audiowide-regular">Bảng Tin Chăm Sóc Thú Cưng</h2>
     </header>
     <div class="container">
         <div class="row">
@@ -176,7 +176,15 @@
         function toggleDescription(element) {
             const newsItem = element.closest('.news-item');
             newsItem.classList.toggle('expanded');
-        }
+            }
+
+            document.querySelectorAll('.read-more').forEach(el => {
+                el.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    toggleDescription(this);
+            });
+        });
+
     </script>
 </body>
 </html>
