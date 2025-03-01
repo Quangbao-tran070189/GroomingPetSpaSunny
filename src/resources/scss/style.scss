@@ -692,6 +692,7 @@ ul:hover #card-5:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: gradient3 1s ease infinite;
 }
 .about-content {
   text-align: justify;
@@ -1172,3 +1173,78 @@ img {
       padding: 2px; 
     } 
   }
+
+  //Slogun
+.slogun {
+  text-align: center;
+  margin-top: 30px;
+}
+.slogun-content {
+  list-style: none;
+  font-family: playball-regular;
+}
+.slogun-text1 {
+  font-size: 2rem;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+.slogun-text2 {
+  line-height: 25px;
+  font-size: 2rem;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  animation: gradient2 5s ease-in-out infinite;
+}
+.slogun-text3 {
+  font-size: 2rem;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  animation: gradient3 1s ease infinite;
+}
+.footer-sdt {
+  animation: gradient3 1s ease infinite;
+}
+.extra-footer-design {
+  font-size: 10px;
+  color: rgb(214, 212, 212);
+}
+@keyframes gradient2 {
+  0% {
+    color: rgb(255, 243, 71);
+  }
+  100% {
+    color: rgb(236, 19, 66);
+  }
+}
+
+@keyframes gradient3 {
+  0% {
+    color: tomato;
+  }
+  50% {
+    color: turquoise;
+  }
+  100% {
+    color: rgb(236, 19, 66);
+  }
+}
+.content h2{
+  font-weight: 600;
+  animation: gradient4 3s ease infinite;
+}
+.content span{
+  font-weight: 500;
+  animation: gradient4 3s ease infinite;
+}
+@keyframes gradient4 {
+  0% {
+    color: rgb(18, 252, 252);
+  }
+  50% {
+    color: turquoise;
+  }
+  100% {
+    color: rgb(4, 231, 80);
+  }
+}
+  //End-slogun
