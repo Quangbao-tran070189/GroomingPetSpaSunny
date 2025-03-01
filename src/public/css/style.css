@@ -1233,6 +1233,10 @@ img {
   color: rgb(214, 212, 212);
 }
 
+.social-color {
+  animation: gradient3 1s ease infinite;
+}
+
 @keyframes gradient2 {
   0% {
     color: rgb(255, 243, 71);
