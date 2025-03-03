@@ -726,6 +726,7 @@ ul:hover #card-5:hover {
   border: 1px solid tomato;
   border-radius: 20px;
   padding: 5px 16px;
+  background-color: #fff;
 }
 
 .about-content-infor span {
@@ -1235,6 +1236,15 @@ img {
 
 .social-color {
   animation: gradient3 1s ease infinite;
+}
+
+.footer-extra-name1 {
+  font-weight: bolder;
+  letter-spacing: 6px;
+}
+
+.footer-extra-name {
+  letter-spacing: 10px;
 }
 
 @keyframes gradient2 {
