@@ -205,6 +205,14 @@
   }
 }
 /*------------------------- Font Styles --------------------------*/
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
 .mystery-quest-regular,
 .cedarville-cursive-regular,
 .playball-regular,
@@ -712,6 +720,10 @@ ul:hover #card-5:hover {
 
 .about-content-text {
   padding: 8px 0;
+}
+
+.about-content-text1 {
+  color: tomato;
 }
 
 .about-content-text span {
@@ -1268,14 +1280,25 @@ img {
 }
 .content h2 {
   font-weight: 600;
-  animation: gradient4 3s ease infinite;
+  animation: gradient5 3s ease infinite;
 }
 
 .content span {
   font-weight: 500;
-  animation: gradient4 3s ease infinite;
+  animation: gradient5 3s ease infinite;
 }
 
+@keyframes gradient5 {
+  0% {
+    color: rgb(218, 120, 8);
+  }
+  50% {
+    color: rgb(252, 195, 8);
+  }
+  100% {
+    color: rgb(18, 19, 18);
+  }
+}
 @keyframes gradient4 {
   0% {
     color: rgb(18, 252, 252);
@@ -1286,6 +1309,32 @@ img {
   100% {
     color: rgb(4, 231, 80);
   }
+}
+.about-intro-extra {
+  font-weight: bolder;
+  color: #04806f;
+}
+
+.about-intro-extra1 {
+  font-weight: bold;
+  font-size: 18px;
+  animation: gradient4 3s ease infinite;
+}
+
+.slogun-extra {
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slogun-extra1 {
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slogun-extra2 {
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /*# sourceMappingURL=style.css.map */
