@@ -23,13 +23,33 @@
 
 
 <!-- Thêm phần này cho chế độ mobile -->
+<style>
+  /* Tùy chỉnh mũi tên */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền */
+    border-radius: 50%; /* Bo tròn */
+    padding: 10px; /* Kích thước */
+    color: #f3f705; /* Màu mũi tên */
+    width: 40px; /* Chiều rộng */
+    height: 40px; /* Chiều cao */
+    background-size: 50% 50%; /* Kích thước icon */
+    border: 2px solid #ffffff; /* Viền */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Bóng đổ */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển đổi */
+  }
+
+  /* Hiệu ứng hover */
+  .carousel-control-prev:hover .carousel-control-prev-icon,
+  .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(255, 0, 0, 0.8); /* Màu nền khi hover */
+    color: #ffffff; /* Màu mũi tên khi hover */
+  }
+</style>
+
 <div id="customCarouselNoTouching" class="carousel slide mt-4 d-block d-md-none" data-bs-touch="false">
   <div class="carousel-inner">
-    <!--<div class="carousel-item active">
-      <img src="/img/Service1.webp" class="d-block w-100" alt="Image 1">
-    </div>
-    -->
-    <div class="carousel-item">
+    <div class="carousel-item active">
       <img src="/img/Service2.webp" class="d-block w-100" alt="giá dịch vụ cắt tỉa lông thú cưng">
     </div>
     <div class="carousel-item">
@@ -45,6 +65,9 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<!-- Thêm thư viện Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
  
     </div>
     
@@ -201,7 +224,7 @@
         </div>
     </div>
     <div class="col-lg-4 col-md-6 col-12 d-flex">
-        <div id="about-contact" class="about flex-fill">
+        <div class="about flex-fill">
             <div class="about-header slogun-extra2">LIÊN HỆ</div>
             <div class="about-content">
                 <span>Chủ thú cưng</span>
