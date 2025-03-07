@@ -30,6 +30,7 @@
 /* Hiệu ứng bóng đổ cho menu */
 .navbar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100000;
 }
 
 /* Hiệu ứng cho logo */
@@ -82,6 +83,7 @@
     transform: translateY(-15px);
   }
 }
+/* Custom Gallery */
 .custom-gallery {
   display: flex;
   flex-direction: column;
@@ -133,12 +135,7 @@
     transform: translateX(100%);
   }
 }
-/* Media Queries để tăng kích thước ảnh trên mobile */
-@media (max-width: 768px) {
-  .custom-image-row img {
-    width: 30%; /* Tăng kích thước ảnh lên 30% */
-  }
-}
+/* Custom Header */
 .custom-header {
   padding: 20px;
   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Nền gradient tinh tế */
@@ -176,19 +173,7 @@
   animation: fadeIn 2s;
 }
 
-/* Media Queries để điều chỉnh kích thước trên thiết bị di động */
-@media (max-width: 768px) {
-  .custom-header {
-    padding: 15px;
-  }
-  .custom-header h4 {
-    font-size: 2em; /* Kích thước chữ nhỏ hơn */
-  }
-  .custom-header .subheader {
-    font-size: 1em; /* Kích thước chữ nhỏ hơn */
-  }
-}
-/*-------------------- Background Animation ----------------------*/
+/* Background Animation */
 .background-animation {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -206,7 +191,7 @@
     background-position: 0% 50%;
   }
 }
-/*------------------------- Font Styles --------------------------*/
+/* Font Styles */
 .roboto {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
@@ -215,7 +200,7 @@
   font-variation-settings: "wdth" 100;
 }
 
-/*---------------------------- Cards -----------------------------*/
+/* Cards */
 h1 {
   color: green;
 }
@@ -269,7 +254,7 @@ p {
   border-style: none;
 }
 
-/*-------------------- Store Products --------------------*/
+/* Store Products */
 .btn-fix-separate {
   display: flex;
   justify-content: space-evenly;
@@ -300,7 +285,7 @@ p {
   margin-right: -8px;
 }
 
-/*----------------------- Navigation ----------------------*/
+/* Navigation */
 .nav-item,
 .dropdown-menu {
   list-style: none;
@@ -343,7 +328,7 @@ p {
   z-index: 1050; /* Ensure the dropdowns are above the navbar */
 }
 
-/*----------------------- Animation ----------------------*/
+/* Animation */
 #content {
   margin-bottom: 30px;
 }
@@ -370,6 +355,7 @@ p {
   text-shadow: 2px 0 #f36c6c, -2px 0 #f36c6c, 0 2px #f36c6c, 0 -2px #f36c6c, 1px 1px #f36c6c, -1px -1px #f36c6c, 1px -1px #f36c6c, -1px 1px #f36c6c;
 }
 
+/* Slicer */
 .custom-carousel-img {
   width: 100%;
   height: auto;
@@ -394,11 +380,13 @@ p {
   max-width: 100%;
 }
 
+/* Home Product */
 .card-text-describe a {
   text-decoration: none;
   color: #333;
 }
 
+/* Home Product */
 * {
   margin: 0;
   padding: 0;
@@ -525,10 +513,7 @@ p {
   letter-spacing: 2px;
 }
 
-.slicer img {
-  object-fit: cover;
-}
-
+/* Home Images Area */
 #wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -620,21 +605,7 @@ ul:hover #card-5:hover {
   -webkit-transform: scale(1.1) rotate(20deg) translate(100px, 20px);
 }
 
-/* Media Query cho mobile */
-@media (max-width: 767px) {
-  #wrapper {
-    flex-direction: column;
-  }
-  ul#index_cards {
-    flex-direction: column;
-  }
-  ul#index_cards li {
-    width: 100%;
-    margin: 10px 0;
-  }
-}
-/*Ở đây mình chỉ style cho -webkit các trong demo sẽ có đủ cho -moz và -o*/
-/*-------------------- About-contact --------------------*/
+/* About-contact */
 .about-space {
   display: flex;
   flex-wrap: wrap;
@@ -725,6 +696,7 @@ ul:hover #card-5:hover {
   width: 31%;
 }
 
+/* Product Box */
 .product-box {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -775,6 +747,7 @@ ul:hover #card-5:hover {
   color: #777;
 }
 
+/* Swiper Container */
 .swiper-container {
   width: 100%;
   height: auto;
@@ -792,7 +765,7 @@ ul:hover #card-5:hover {
   max-height: 500px; /* Bạn có thể điều chỉnh chiều cao tối đa của hình ảnh */
 }
 
-/* ----- Newi Styles ----- */
+/* News Styles */
 body {
   line-height: 1.6;
   margin: 0;
@@ -899,107 +872,7 @@ header h1 {
   color: #777;
 }
 
-/* Media query for desktop layout */
-@media (min-width: 768px) {
-  .news-row {
-    flex-direction: row;
-    align-items: center;
-  }
-  .news-img {
-    flex: 1;
-    margin-right: 20px;
-  }
-  .news-content {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 200px;
-    padding: 10px;
-  }
-  /* Swap positions of name and description on desktop */
-  .news-description {
-    order: 2; /* Change order */
-    flex-grow: 1;
-  }
-  .news-name {
-    order: 1; /* Change order */
-  }
-  .news-origin {
-    order: 3;
-    align-self: flex-end;
-    text-align: right;
-  }
-}
-/* Styling for each news item */
-.news-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.news-row {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-/* Row nhỏ */
-.news-row-small {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-/* Styling for the news image */
-.news-img {
-  flex: 1;
-  margin-right: 10px;
-}
-
-.news-img img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Styling for the news name */
-.news-name {
-  flex: 2;
-}
-
-.news-name h2 {
-  margin: 0;
-  font-size: 1.2em;
-  color: #555;
-}
-
-/* Styling for the news description */
-.news-description {
-  margin: 10px 0;
-}
-
-.news-description h5 {
-  margin: 0;
-  font-size: 1em;
-  color: #666;
-}
-
-/* Styling for the news origin */
-.news-origin {
-  text-align: right;
-}
-
-.news-origin {
-  font-size: 0.9em;
-  color: #777;
-}
-
+/* Preprod Product */
 .preprod-product-box {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -1067,10 +940,12 @@ img {
   border-radius: 8px;
 }
 
+/* Custom HR */
 .custom-hr {
   border-top: 3px solid #1f04b6; /* Điều chỉnh độ dày và màu sắc */
 }
 
+/* Home Product Area */
 .card-bg {
   background: linear-gradient(90deg, rgba(242, 241, 133, 0.8379726891) 0%, rgba(19, 205, 84, 0.7483368347) 35%, rgba(0, 212, 255, 0.9080007003) 100%);
 }
@@ -1095,6 +970,7 @@ img {
   width: 70%;
 }
 
+/* Home */
 .mt-4 {
   margin-top: 1.5rem;
 }
@@ -1117,7 +993,30 @@ img {
   border-radius: 10px; /* Đảm bảo hình ảnh cũng được bo tròn theo column */
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
+  .custom-image-row img {
+    width: 30%; /* Tăng kích thước ảnh lên 30% */
+  }
+  .custom-header {
+    padding: 15px;
+  }
+  .custom-header h4 {
+    font-size: 2em; /* Kích thước chữ nhỏ hơn */
+  }
+  .custom-header .subheader {
+    font-size: 1em; /* Kích thước chữ nhỏ hơn */
+  }
+  #wrapper {
+    flex-direction: column;
+  }
+  ul#index_cards {
+    flex-direction: column;
+  }
+  ul#index_cards li {
+    width: 100%;
+    margin: 10px 0;
+  }
   .row-eq-height {
     flex-direction: column;
   }
@@ -1173,6 +1072,7 @@ img {
     padding: 2px;
   }
 }
+/* Slogun */
 .slogun {
   text-align: center;
   margin-top: 30px;
