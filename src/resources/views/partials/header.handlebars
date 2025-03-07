@@ -1,34 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="mnNfNI4lZhh2zn5OGMMu7C-_G4wUTaTl31u2RNWYUY0" />
   <title>Sunny Pet Spa</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Bootstrap 4 CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
   <style>
     @import url("https://fonts.googleapis.com/css?family=Varela+Round");
 
-    .custom-body {
+    body {
       box-sizing: border-box;
       width: 100%;
       height: 100%;
       background: #d7ffde;
-     
-    }
-
-    .custom-html {
-      box-sizing: border-box;
-    }
-
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-      padding: 0;
-      margin: 0;
-      letter-spacing: 1.1px;
+      font-family: 'Roboto', sans-serif;
     }
 
     .navbar-nav .nav-link {
@@ -39,7 +29,6 @@
     .navbar-nav .nav-link:hover {
       color: #ffcc00 !important;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      transition: color 0.3s ease-in-out;
     }
 
     .navbar-toggler {
@@ -70,7 +59,6 @@
         opacity: 1;
       }
     }
-   
 
     .header-logo {
       display: flex;
@@ -146,15 +134,16 @@
     }
   </style>
 </head>
-<body class="custom-body">
-  <nav class="navbar navbar-expand-lg custom-header position-sticky top-0 w-100">
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-header position-sticky top-0 w-100">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <div class="header-logo">
           <span>Sunny Pet Spa Bà Rịa</span>
         </div>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
@@ -169,7 +158,7 @@
             <a class="nav-link" href="/newis">Tin Tức</a>
           </li>
           <li class="nav-item dropdown slide-in">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
               Thực Phẩm & Phụ Kiện
             </a>
             <ul class="dropdown-menu">
@@ -177,13 +166,13 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/stuffs">Quầy Phụ Kiện</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/medicines">Quầy Dược Phẩm Thú Y</a></li>
+              <li><a class="dropdown-item" href="/medicines">Quầy Chuồng & Vật Dụng</a></li>
             </ul>
           </li>
         </ul>
         {{#if user}}
         <li class="nav-item dropdown text-white slide-in">
-          <a class="nav-link dropdown-toggle header-login-name-right" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle header-login-name-right" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
             Chào {{#each user}} {{this.name}} {{/each}}
           </a>
           <ul class="dropdown-menu">
@@ -194,8 +183,8 @@
             <li><a class="dropdown-item" href="/stuffs/stuffcreate">Đăng Phụ Kiện</a></li>
             <li><a class="dropdown-item" href="/me/stored/stuffs">Chỉnh sửa Phụ Kiện</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/medicines/medicinecreate">Đăng Sản Phẩm Thú Y</a></li>
-            <li><a class="dropdown-item" href="/me/stored/medicines">Chỉnh sửa Sản Phẩm Thú Y</a></li>
+            <li><a class="dropdown-item" href="/medicines/medicinecreate">Đăng Chuồng & Vật Dụng</a></li>
+            <li><a class="dropdown-item" href="/me/stored/medicines">Chỉnh sửa Chuồng & Vật Dụng</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/newis/newicreate">Đăng Tin Tức</a></li>
             <li><a class="dropdown-item" href="/me/stored/newis">Chỉnh sửa Tin Tức</a></li>
@@ -214,29 +203,26 @@
     </div>
   </nav>
 
-<!-- Slicer -->
-<div class="slicer">
-  <img src="/img/slicer3.webp" alt="chăm sóc chó">
-</div>
-<div class="slogun">
-  <ul class="slogun-content">
-    <li class="slogun-text1 slogun-extra1">
-      Sunny Pet Spa Baria
-    </li>
-    <li class="slogun-text2 slogun-extra">
-      Đưa Đón Pet Tận Nhà
-    </li>
-    <li class="slogun-text3 slogun-extra2">
-      Liên hệ Danh nha 0933.054.064 - 0907.060.068 (Cẩm Tú)
-    </li>
-  </ul>
-</div>
-<!-- End Slicer -->
+  <!-- Slicer -->
+  <div class="slicer">
+    <img src="/img/slicer3.webp" alt="pet spa baria" class="img-fluid">
+  </div>
+  <div class="slogun">
+    <ul class="slogun-content">
+      <li class="slogun-text1 slogun-extra1">
+        Sunny Pet Spa Baria
+      </li>
+      <li class="slogun-text2 slogun-extra">
+        Đưa Đón Pet Tận Nhà
+      </li>
+      <li class="slogun-text3 slogun-extra2">
+        Liên hệ Danh nha 0933.054.064 - 0907.060.068 (Cẩm Tú)
+      </li>
+    </ul>
+  </div>
+  <!-- End Slicer -->
 
-
-
-
-
+  <!-- Bootstrap 4 JavaScript -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
