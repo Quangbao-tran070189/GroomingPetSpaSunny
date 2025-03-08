@@ -213,33 +213,13 @@
   }
 }
 /*------------------------- Font Styles --------------------------*/
-.mystery-quest-regular,
-.cedarville-cursive-regular,
-.playball-regular,
-.madimi-one-regular,
-.rammetto-one-regular,
-.caveat-brush-regular,
-.antonio,
-.annie-use-your-telescope-regular {
+.mystery-quest-regular {
   font-weight: 400;
   font-style: normal;
 }
 
 .mystery-quest-regular {
   font-family: "Mystery Quest", system-ui;
-}
-
-.cedarville-cursive-regular,
-.playball-regular,
-.annie-use-your-telescope-regular,
-.caveat-brush-regular {
-  font-family: cursive;
-}
-
-.madimi-one-regular,
-.rammetto-one-regular,
-.antonio {
-  font-family: sans-serif;
 }
 
 /*---------------------------- Cards -----------------------------*/
@@ -269,7 +249,7 @@ h1 {
 
 .card-name {
   display: flex;
-  color: #08b88f;
+  color: #025a45;
   justify-content: center;
 }
 
@@ -287,7 +267,7 @@ p {
   position: absolute;
   bottom: 0;
   margin-bottom: 4px;
-  background-color: #23d5ab;
+  background-color: #7ef7da;
   border-style: none;
 }
 
@@ -329,7 +309,7 @@ p {
 }
 
 .custom-header {
-  background-color: #08b88f;
+  background-color: #c7f8ed;
   z-index: 1030;
   position: sticky;
   top: 0;
@@ -540,7 +520,7 @@ ul:hover #card-5:hover {
   border-radius: 10px;
   margin-top: 16px;
   box-shadow: 20px 20px 10px -10px gray;
-  border: 3px solid #B2E6D4; /* Màu xanh lục nhạt */
+  border: 3px solid #06b877; /* Màu xanh lục nhạt */
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -650,7 +630,7 @@ ul:hover #card-5:hover {
   font-weight: bold;
   border-radius: 8px;
   margin-top: 15px;
-  color: #007bff;
+  color: #7bb5f3;
 }
 
 .product-meta {
@@ -683,12 +663,11 @@ ul:hover #card-5:hover {
 
 /* ----- Newi Styles ----- */
 body {
-  font-family: Georgia, serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #f4f4f4;
+  background-color: #b6f5e7;
 }
 
 /* Container adjustment for mobile phones */
