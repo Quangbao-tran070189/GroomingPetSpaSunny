@@ -1,4 +1,3 @@
-//coder: Bao Quang Tran 0799900012 (VietNam: +84)
 require('dotenv').config();
 const path = require('path');
 const express = require('express');

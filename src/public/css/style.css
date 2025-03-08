@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
 /*------------------------- Body Margin --------------------------*/
 .body-margin {
   margin-left: 4px;
@@ -584,6 +592,7 @@ ul:hover #card-5:hover {
   border: 1px solid tomato;
   border-radius: 20px;
   padding: 5px 16px;
+  background-color: #fff;
 }
 
 .about-content-infor span {
