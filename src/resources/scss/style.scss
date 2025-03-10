@@ -11,6 +11,14 @@
     "wdth" 100;
 }
 /// 
+pre {
+  white-space: pre-wrap;
+  /* Các thuộc tính CSS khác tùy chọn */
+  font-family: monospace; /* Đảm bảo phông chữ monospace */
+  padding: 10px; /* Thêm padding để văn bản không sát lề */
+  border: 1px solid #ccc; /* Thêm border để dễ nhìn */
+  background-color: #f9f9f9; /* Thêm màu nền để dễ nhìn */
+}
 /*------------------------- Body Margin --------------------------*/
 .body-margin {
   margin-left: 4px;
