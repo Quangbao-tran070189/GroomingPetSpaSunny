@@ -542,6 +542,10 @@ ul:hover #card-5:hover {
   justify-content: center;
 }
 
+.about-header:hover {
+  color: #eef7f6;
+}
+
 .about-content {
   text-align: justify;
   padding: 0 16px 16px;
