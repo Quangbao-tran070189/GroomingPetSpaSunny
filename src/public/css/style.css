@@ -249,7 +249,7 @@ h1 {
 
 .card-name {
   display: flex;
-  color: #025a45;
+  color: #08b88f;
   justify-content: center;
 }
 
@@ -309,7 +309,7 @@ p {
 }
 
 .custom-header {
-  background-color: #c7f8ed;
+  background-color: #9bf0dc;
   z-index: 1030;
   position: sticky;
   top: 0;
@@ -520,14 +520,15 @@ ul:hover #card-5:hover {
   border-radius: 10px;
   margin-top: 16px;
   box-shadow: 20px 20px 10px -10px gray;
-  border: 3px solid #06b877; /* Màu xanh lục nhạt */
+  border: 3px double #06b877; /* Màu xanh lục nhạt */
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .about:hover {
-  border: 2px solid #FFA07A; /* Màu cam nhạt */
+  border: 2px outset #FFA07A; /* Màu cam nhạt */
+  background: #f5f38f;
 }
 
 .about-header {
@@ -1135,6 +1136,10 @@ img {
 .slogun-extra2 {
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  border: 3px dashed rgb(145, 4, 4);
 }
 
 /*# sourceMappingURL=style.css.map */
