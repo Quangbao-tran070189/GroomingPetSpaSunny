@@ -410,6 +410,10 @@ p {
   color: #333;
 }
 
+.card {
+  box-shadow: 2px 2px 10px #000;
+}
+
 #wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -681,7 +685,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #b6f5e7;
+  background-color: #d9f5f5;
 }
 
 /* Container adjustment for mobile phones */
