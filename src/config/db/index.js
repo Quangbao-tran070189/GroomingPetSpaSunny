@@ -4,8 +4,7 @@ async function connect() {
     try {
         const uri = process.env.MONGODB_URI;
         await mongoose.connect(uri, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
+            
             serverSelectionTimeoutMS: 30000 // Tăng thời gian timeout lên 30 giây
         });
         console.log('Connect successfully!!!');

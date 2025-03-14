@@ -115,6 +115,10 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile(path.join(__dirname, '../sitemap.xml')); // Hoặc đường dẫn đến public
+});
+
 // Routes initialization
 route(app);
 

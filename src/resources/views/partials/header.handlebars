@@ -213,7 +213,16 @@
 
   <!-- Slicer -->
     <div class="slicer">
-        <img src="/img/slicer3.webp" alt="pet spa baria" class="img-fluid">
+        <img srcset="
+    /img/slicer3-320.webp 320w,
+    /img/slicer3-480.webp 480w,
+    /img/slicer3-800.webp 800w,
+    /img/slicer3.webp 1200w"
+    sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, (max-width: 800px) 750px, 1200px"
+    src="/img/slicer3.webp"
+    alt="pet spa baria"
+    class="img-fluid"
+    loading="lazy">
     </div>
     <div class="slogun">
         <ul class="slogun-content">
