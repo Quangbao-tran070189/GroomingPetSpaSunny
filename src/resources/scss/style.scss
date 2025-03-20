@@ -1089,3 +1089,36 @@ header h1 {
     padding-right: 2px;
   }
 }
+/* filepath: d:\Code Web\NodeJS-BackEnd\BackEnd1 - ver3-UpToVercel\src\resources\scss\style.scss */
+
+/* Mobile view (2 columns) */
+.custom-col-5ths {
+  width: 50%; /* Two columns on mobile */
+  float: left;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Tablet view (3 columns) */
+@media (min-width: 768px) {
+    .custom-col-5ths {
+        width: 33.33%; /* Three columns on tablets */
+    }
+}
+
+/* Desktop view (5 columns) */
+@media (min-width: 992px) {
+  .custom-col-5ths {
+    width: 20%; /* Five columns on desktop */
+  }
+}
+
+/* General styling for card-frame (optional) */
+.card-frame {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.card {
+    margin-bottom: 15px; /* Add some spacing between cards */
+}
