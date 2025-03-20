@@ -1,87 +1,40 @@
-@import 'variables';
-///
+//------------------------- Variables -------------------------
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$font-family: "Roboto", sans-serif;
+$border-radius: 10px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$green-color: #08b88f;
 
-
-.roboto {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-/// 
-pre {
-  white-space: pre-wrap;
-  /* Các thuộc tính CSS khác tùy chọn */
-  font-family: monospace; /* Đảm bảo phông chữ monospace */
-  padding: 10px; /* Thêm padding để văn bản không sát lề */
-  border: 1px solid #ccc; /* Thêm border để dễ nhìn */
-  background-color: #f9f9f9; /* Thêm màu nền để dễ nhìn */
-}
-/*------------------------- Body Margin --------------------------*/
-.body-margin {
-  margin-left: 4px;
-  margin-right: 4px;
-}
-//-border_animation
-/* Hiệu ứng hover cho các mục menu */
-.nav-link {
-  transition: color 0.3s ease-in-out;
-}
-.nav-link:hover {
-  color: #f39c12; /* Màu vàng cam */
+//------------------------- Mixins -------------------------
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 4px, $color: rgba(0, 0, 0, 0.2)) {
+  text-shadow: $x $y $blur $color;
 }
 
-/* Hiệu ứng khi click vào menu Hamburger trên mobile */
-.navbar-toggler {
-  transition: transform 0.3s ease;
-}
-.navbar-toggler.collapsed {
-  transform: rotate(90deg);
+@mixin border-radius($radius: 10px) {
+  border-radius: $radius;
 }
 
-/* Hiệu ứng bóng đổ cho menu */
-.navbar {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@mixin box-shadow($shadow: 0 4px 6px rgba(0, 0, 0, 0.1)) {
+  box-shadow: $shadow;
 }
 
-/* Hiệu ứng cho logo */
-.header-logo img {
-  transition: transform 0.3s ease-in-out;
-}
-.header-logo img:hover {
-  transform: scale(1.1);
-}
-
-/* Màu chữ đậm hơn cho mục Đăng Nhập */
-.nav-link[href="/users/login"] {
-  color: #ff6f61; /* Màu đậm hơn */
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
-}
-.nav-link[href="/users/login"]:hover {
-  color: #e04e39; /* Màu đỏ cam khi hover */
-}
-
-/* Hiệu ứng Slide In */
-.slide-in {
-  transform: translateX(-100%);
-  animation: slideInAnimation 1s forwards;
-}
-
+//------------------------- Keyframes -------------------------
 @keyframes slideInAnimation {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
-}
-
-/* Hiệu ứng Bounce */
-.bounce {
-  animation: bounceAnimation 1s infinite;
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes bounceAnimation {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -90,42 +43,6 @@ pre {
   60% {
     transform: translateY(-15px);
   }
-}
-
-//-End border_animation
-.custom-gallery {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.custom-image-row {
-  display: flex;
-  flex-wrap: nowrap;
-  transition: transform 0.3s ease-in-out;
-}
-
-.custom-image-row img {
-  width: 10%;
-  margin: 2px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.first-row {
-  animation: scrollLeft 30s linear infinite;
-}
-
-.second-row {
-  animation: scrollRight 40s linear infinite;
-}
-
-.third-row {
-  animation: scrollLeft 50s linear infinite;
-}
-
-.custom-image-row img:hover {
-  transform: scale(1.2);
-  animation-play-state: paused;
 }
 
 @keyframes scrollLeft {
@@ -146,39 +63,6 @@ pre {
   }
 }
 
-/* Media Queries để tăng kích thước ảnh trên mobile */
-@media (max-width: 768px) {
-  .custom-image-row img {
-    width: 30%; /* Tăng kích thước ảnh lên 30% */
-  }
-}
- //----header title
- .custom-header {
-  padding: 20px;
-  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Nền gradient tinh tế */
-  border-radius: 10px; /* Bo góc mềm mại */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.custom-header h4 {
-  font-family: 'Lobster', cursive; /* Kiểu chữ nghệ thuật */
-  color: #ffffff; /* Màu chữ trắng */
-  font-size: 2.5em; /* Kích thước chữ lớn */
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng chữ */
-}
-
-.custom-header .subheader {
-  font-family: 'Open Sans', sans-serif; /* Kiểu chữ mềm mại */
-  color: #f5f5f5; /* Màu chữ nhẹ nhàng */
-  font-size: 1.2em; /* Kích thước chữ trung bình */
-  margin-bottom: 5px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng chữ */
-}
-
-/* Hiệu ứng động mờ dần */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -188,34 +72,6 @@ pre {
   }
 }
 
-.custom-header h4,
-.custom-header .subheader {
-  animation: fadeIn 2s;
-}
-
-/* Media Queries để điều chỉnh kích thước trên thiết bị di động */
-@media (max-width: 768px) {
-  .custom-header {
-    padding: 15px;
-  }
-
-  .custom-header h4 {
-    font-size: 2em; /* Kích thước chữ nhỏ hơn */
-  }
-
-  .custom-header .subheader {
-    font-size: 1em; /* Kích thước chữ nhỏ hơn */
-  }
-}
-
-//--Abouts animation
-//--End Abouts animation
-/*-------------------- Background Animation ----------------------*/
-.background-animation {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-}
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -228,42 +84,239 @@ pre {
   }
 }
 
-/*------------------------- Font Styles --------------------------*/
+@keyframes gradient2 {
+  0% {
+    color: rgb(255, 243, 71);
+  }
+  100% {
+    color: rgb(236, 19, 66);
+  }
+}
+
+@keyframes gradient3 {
+  0% {
+    color: tomato;
+  }
+  50% {
+    color: turquoise;
+  }
+  100% {
+    color: rgb(236, 19, 66);
+  }
+}
+
+@keyframes gradient5 {
+  0% {
+    color: rgb(218, 120, 8);
+  }
+  50% {
+    color: rgb(252, 195, 8);
+  }
+  100% {
+    color: rgb(18, 19, 18);
+  }
+}
+
+@keyframes gradient4 {
+  0% {
+    color: rgb(18, 252, 252);
+  }
+  50% {
+    color: turquoise;
+  }
+  100% {
+    color: rgb(4, 231, 80);
+  }
+}
+
+//------------------------- General Styles -------------------------
+body {
+  font-family: $font-family;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #d9f5f5;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-family: monospace;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.body-margin {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+//------------------------- Navigation -------------------------
+.nav-link {
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #f39c12;
+  }
+
+  &[href="/users/login"] {
+    color: #ff6f61;
+    font-weight: bold;
+
+    &:hover {
+      color: #e04e39;
+    }
+  }
+}
+
+.navbar-toggler {
+  transition: transform 0.3s ease;
+
+  &.collapsed {
+    transform: rotate(90deg);
+  }
+}
+
+.navbar {
+  box-shadow: $box-shadow;
+}
+
+.header-logo img {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+//------------------------- Animations -------------------------
+.slide-in {
+  transform: translateX(-100%);
+  animation: slideInAnimation 1s forwards;
+}
+
+.bounce {
+  animation: bounceAnimation 1s infinite;
+}
+
+//------------------------- Custom Gallery -------------------------
+.custom-gallery {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.custom-image-row {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.3s ease-in-out;
+
+  img {
+    width: 10%;
+    margin: 2px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+      animation-play-state: paused;
+    }
+  }
+}
+
+.first-row {
+  animation: scrollLeft 30s linear infinite;
+}
+
+.second-row {
+  animation: scrollRight 40s linear infinite;
+}
+
+.third-row {
+  animation: scrollLeft 50s linear infinite;
+}
+
+//------------------------- Header Title -------------------------
+.custom-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  @include border-radius($border-radius);
+  @include box-shadow($box-shadow);
+  text-align: center;
+  margin-bottom: 20px;
+
+  h4 {
+    font-family: 'Lobster', cursive;
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    @include text-shadow(2px, 2px, 4px, rgba(0, 0, 0, 0.2));
+    animation: fadeIn 2s;
+  }
+
+  .subheader {
+    font-family: 'Open Sans', sans-serif;
+    color: #f5f5f5;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    @include text-shadow(1px, 1px, 2px, rgba(0, 0, 0, 0.2));
+    animation: fadeIn 2s;
+  }
+}
+
+//------------------------- Background Animation -------------------------
+.background-animation {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+//------------------------- Font Styles -------------------------
 .mystery-quest-regular {
   font-weight: 400;
   font-style: normal;
-}
-.mystery-quest-regular {
   font-family: "Mystery Quest", system-ui;
 }
 
-
-/*---------------------------- Cards -----------------------------*/
+//------------------------- Cards -------------------------
 h1 {
   color: $green-color;
 }
+
 .card-frame {
   margin-top: 16px;
   height: 380px;
+
+  img {
+    height: 150px;
+    object-fit: cover;
+  }
 }
-.card-frame img {
-  height: 150px;
-  object-fit: cover;
-}
+
 .card-body-frame {
   position: relative;
-  
+
+  a {
+    text-decoration: none;
+    padding-left: -4px;
+    padding-right: -4px;
+  }
 }
-.card-body-frame a {
-  text-decoration: none;
-  padding-left: -4px;
-  padding-right: -4px;
-}
+
 .card-name {
   display: flex;
-  color: #08b88f;
+  color: $green-color;
   justify-content: center;
 }
+
 p {
   position: absolute;
   margin-top: 10px;
@@ -273,6 +326,7 @@ p {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
 .card-button {
   position: absolute;
   bottom: 0;
@@ -281,97 +335,112 @@ p {
   border-style: none;
 }
 
-/*-------------------- Store Products --------------------*/
+//------------------------- Store Products -------------------------
 .btn-fix-separate {
   display: flex;
   justify-content: space-evenly;
   margin: 0 2px 2px;
 }
+
 .card-frame li {
   list-style-type: none;
 }
+
 .price-space {
   display: flex;
   justify-content: space-between;
-  
 }
+
 .card-price {
   color: red;
 }
+
 .card-origin {
   color: #777b7c;
   font-size: small;
 }
+
 .card-price,
 .card-origin {
   margin-left: -8px;
   margin-right: -8px;
 }
 
-//-- product-edit
-
-/*----------------------- Navigation ----------------------*/
-.nav-item, 
+//------------------------- Navigation -------------------------
+.nav-item,
 .dropdown-menu {
   list-style: none;
 }
+
 .custom-header {
   background-color: #9bf0dc;
   z-index: 1030;
-  position: sticky; 
-  top: 0; 
+  position: sticky;
+  top: 0;
   width: 100%;
-}
-.custom-header .navbar-nav .nav-link {
-  color: white; /* Set text color to white */
-}
-.custom-header .navbar-nav .nav-link:hover {
-  color: #ffebcd; /* Optional: Change color on hover */
-}
-.custom-header .navbar-nav {
-  justify-content: center; /* Center align the nav links */
-}
-.header-logo img {
-  max-width: 40px;
-  max-height: 40px; /* Adjust size as needed */
-  margin-right: 10px;
-}
-.header-logo span {
-  vertical-align: middle;
-  font-size: 1.5rem; /* Adjust size as needed */
-  color: #A01D1E;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-}
-.dropdown-menu { 
-  z-index: 1050; /* Ensure the dropdowns are above the navbar */
+
+  .navbar-nav {
+    justify-content: center;
+
+    .nav-link {
+      color: white;
+
+      &:hover {
+        color: #ffebcd;
+      }
+    }
+  }
 }
 
-/*----------------------- Animation ----------------------*/
+.header-logo {
+  img {
+    max-width: 40px;
+    max-height: 40px;
+    margin-right: 10px;
+  }
+
+  span {
+    vertical-align: middle;
+    font-size: 1.5rem;
+    color: #A01D1E;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+      -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
+}
+
+.dropdown-menu {
+  z-index: 1050;
+}
+
+//------------------------- Animation -------------------------
 #content {
   margin-bottom: 30px;
 }
+
 .promotion-header {
   display: flex;
   justify-content: center;
   margin-top: 60px;
   position: relative;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  span {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 10px;
+    color: #fee006;
+    font-weight: bold;
+    text-shadow: 2px 0 #A01D1E, -2px 0 #A01D1E, 0 2px #A01D1E, 0 -2px #A01D1E,
+      1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
 }
-.promotion-header div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.promotion-header span {
-  text-align: center;
-  font-size: 2rem;
-  letter-spacing: 10px;
-  color: #fee006;
-  font-weight: bold;
-  text-shadow: 2px 0 #A01D1E, -2px 0 #A01D1E, 0 2px #A01D1E, 0 -2px #A01D1E,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-}
-//---------Slicer
+
+//------------------------- Slicer -------------------------
 .custom-carousel-img {
   width: 100%;
   height: auto;
@@ -396,20 +465,17 @@ p {
   max-width: 100%;
 }
 
-
-//-----------End Slicer
-
-//-------Home : Product
+//------------------------- Home: Product -------------------------
 .card-text-describe a {
   text-decoration: none;
   color: #333;
 }
-.card { 
+
+.card {
   box-shadow: 2px 2px 10px #000;
 }
-//-------Home: End Product
 
-//----Home - Images Area
+//------------------------- Home - Images Area -------------------------
 #wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -424,31 +490,35 @@ ul#index_cards {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+
+  li {
+    background: #fff;
+    height: auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #666;
+    padding: 25px 10px;
+    margin: 10px;
+    @include border-radius($border-radius);
+    @include box-shadow($box-shadow);
+    transform-origin: center bottom;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+  }
 }
 
-ul#index_cards li {
-  background: #fff;
-  height: auto; /* Cho phép chiều cao tự động điều chỉnh theo nội dung */
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #666;
-  padding: 25px 10px;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #000;
-  transform-origin: center bottom;
-}
-
-ul#index_cards li img {
-  max-width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-#card-1, #card-2, #card-3, #card-4, #card-5 {
-  -webkit-transition: all 0.5s ease-in-out;
+#card-1,
+#card-2,
+#card-3,
+#card-4,
+#card-5 {
+  transition: all 0.5s ease-in-out;
 }
 
 #card-3 {
@@ -456,70 +526,51 @@ ul#index_cards li img {
   z-index: 3;
 }
 
-/* Hover States */
 ul#index_cards li:hover {
   z-index: 4;
 }
 
 ul:hover #card-1 {
-  -webkit-transform: rotate(-20deg) translate(-120px, 10px);
-}
+  transform: rotate(-20deg) translate(-120px, 10px);
 
-ul:hover #card-1:hover {
-  -webkit-transform: scale(1.1) rotate(-20deg) translate(-120px, 10px);
+  &:hover {
+    transform: scale(1.1) rotate(-20deg) translate(-120px, 10px);
+  }
 }
 
 ul:hover #card-2 {
-  -webkit-transform: rotate(-10deg) translate(-70px, 20px);
-}
+  transform: rotate(-10deg) translate(-70px, 20px);
 
-ul:hover #card-2:hover {
-  -webkit-transform: scale(1.1) rotate(-10deg) translate(-70px, 20px);
+  &:hover {
+    transform: scale(1.1) rotate(-10deg) translate(-70px, 20px);
+  }
 }
 
 ul:hover #card-3 {
-  -webkit-transform: rotate(0deg) translate(0px, 20px);
-}
+  transform: rotate(0deg) translate(0px, 20px);
 
-ul:hover #card-3:hover {
-  -webkit-transform: scale(1.1) rotate(0deg) translate(0px, 20px);
+  &:hover {
+    transform: scale(1.1) rotate(0deg) translate(0px, 20px);
+  }
 }
 
 ul:hover #card-4 {
-  -webkit-transform: rotate(10deg) translate(70px, 20px);
-}
+  transform: rotate(10deg) translate(70px, 20px);
 
-ul:hover #card-4:hover {
-  -webkit-transform: scale(1.1) rotate(10deg) translate(70px, 20px);
+  &:hover {
+    transform: scale(1.1) rotate(10deg) translate(70px, 20px);
+  }
 }
 
 ul:hover #card-5 {
-  -webkit-transform: rotate(20deg) translate(120px, 20px);
-}
+  transform: rotate(20deg) translate(120px, 20px);
 
-ul:hover #card-5:hover {
-  -webkit-transform: scale(1.1) rotate(20deg) translate(100px, 20px);
-}
-
-/* Media Query cho mobile */
-@media (max-width: 767px) {
-  #wrapper {
-      flex-direction: column;
-  }
-
-  ul#index_cards {
-      flex-direction: column;
-  }
-
-  ul#index_cards li {
-      width: 100%;
-      margin: 10px 0;
+  &:hover {
+    transform: scale(1.1) rotate(20deg) translate(100px, 20px);
   }
 }
 
-/*Ở đây mình chỉ style cho -webkit các trong demo sẽ có đủ cho -moz và -o*/ 
-//----Home - End Images Area
-/*-------------------- About-contact --------------------*/
+//------------------------- About-contact -------------------------
 .about-space {
   display: flex;
   flex-wrap: wrap;
@@ -528,32 +579,37 @@ ul:hover #card-5:hover {
   margin-left: 0;
   margin-right: 0;
 }
+
 .about {
-  border-radius: 10px;
+  @include border-radius($border-radius);
   margin-top: 16px;
-  box-shadow: 20px 20px 10px -10px gray;
-  border: 3px double #06b877; /* Màu xanh lục nhạt */
+  @include box-shadow(20px 20px 10px -10px gray);
+  border: 3px double #06b877;
   display: flex;
   flex-direction: column;
   flex: 1;
+
+  &:hover {
+    border: 2px outset #FFA07A;
+    background: #f5f38f;
+  }
 }
-.about:hover {
-  border: 2px outset #FFA07A; /* Màu cam nhạt */
-  background: #f5f38f;
-}
+
 .about-header {
   text-align: center;
   font-size: 26px;
   padding: 16px 4px;
-  color: #FFC0CB; /* Màu hồng nhạt */
-  min-height: 100px; /* Điều chỉnh chiều cao tối thiểu */
+  color: #FFC0CB;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    color: #eef7f6;
+  }
 }
-.about-header:hover {
-  color: #eef7f6;
-}
+
 .about-content {
   text-align: justify;
   padding: 0 16px 16px;
@@ -561,86 +617,106 @@ ul:hover #card-5:hover {
   line-height: 30px;
   color: #434242;
   letter-spacing: 1.5px;
-  flex-grow: 1; /* Đảm bảo nội dung dưới cùng chiều dài */
+  flex-grow: 1;
 }
+
 .about-content-color {
   color: darkorange;
   font-size: 25px;
 }
+
 .about-content-text {
   padding: 8px 0;
+
+  span {
+    color: tomato;
+  }
 }
-.about-content-text span {
-  color: tomato;
-}
+
 .about-content-sdt {
   margin-top: 70px;
 }
-.about-content-infor:hover {
-  border: 1px solid tomato;
-  border-radius: 20px;
-  padding: 5px 16px;
-  background-color: #fff;
+
+.about-content-infor {
+  &:hover {
+    border: 1px solid tomato;
+    @include border-radius(20px);
+    padding: 5px 16px;
+    background-color: #fff;
+  }
+
+  span {
+    color: tomato;
+  }
+
+  a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #a4a2a2;
+  }
 }
-.about-content-infor span {
-  color: tomato;
-}
-.about-content-infor a {
-  font-size: 16px;
-  text-decoration: none;
-  color: #a4a2a2;
-}
+
 .about-separate {
   display: flex;
   justify-content: center;
+
+  img {
+    width: 31%;
+  }
 }
-.about-separate img {
-  width: 31%;
-}
-//--------------------
+
+//------------------------- Product Box -------------------------
 .product-box {
   border: 1px solid #ddd;
-  border-radius: 8px;
+  @include border-radius(8px);
   padding: 15px;
   margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   background-color: #fff;
 }
+
 .product-image {
-  border-radius: 8px;
+  @include border-radius(8px);
   overflow: hidden;
 }
+
 .product-details {
   padding-left: 20px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  p {
+    margin: 5px 0;
+    color: #555;
+  }
 }
-.product-details h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #333;
-}
-.product-details p {
-  margin: 5px 0;
-  color: #555;
-}
+
 .product-footer {
   background-color: #f8f9fa;
   padding: 10px;
   text-align: center;
   font-weight: bold;
-  border-radius: 8px;
+  @include border-radius(8px);
   margin-top: 15px;
   color: #7bb5f3;
 }
+
 .product-meta {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+
+  p {
+    margin: 0;
+    color: #777;
+  }
 }
-.product-meta p {
-  margin: 0;
-  color: #777;
-}
-//----- home.handlebars
+
+//------------------------- Home.handlebars -------------------------
 .swiper-container {
   width: 100%;
   height: auto;
@@ -650,27 +726,18 @@ ul:hover #card-5:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    width: auto;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+  }
 }
 
-.swiper-slide img {
-  width: auto;
-  height: auto;
-  max-height: 500px; /* Bạn có thể điều chỉnh chiều cao tối đa của hình ảnh */
-}
-/* ----- Newi Styles ----- */
-
-body {
-  
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #d9f5f5;
-}
-
-/* Container adjustment for mobile phones */
+//------------------------- Newis Styles -------------------------
 .container {
-  width: calc(100% - 8px); /* 4px padding on each side */
+  width: calc(100% - 8px);
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -689,12 +756,11 @@ header h1 {
   gap: 20px;
 }
 
-/* Styling for each news item */
 .news-item {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @include border-radius(8px);
+  @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -704,118 +770,9 @@ header h1 {
 .news-row {
   display: flex;
   flex-direction: column;
-}
-
-/* Small row for mobile layout */
-.news-row-small {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-/* Styling for the news image */
-.news-img {
-  flex: 1;
-  margin-right: 10px;
-}
-
-.news-img img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Styling for the news name */
-.news-name {
-  flex: 2;
-}
-
-.news-name h2 {
-  margin: 0;
-  font-size: 1.2em;
-  color: #555;
-}
-
-/* Styling for the news description */
-.news-description {
-  margin: 10px 0;
-  order: 1; /* Default order */
-}
-
-.news-description h5 {
-  margin: 0;
-  font-size: 1em;
-  color: #666;
-}
-
-/* Styling for the news origin */
-.news-origin {
-  text-align: right;
-}
-
-.news-origin {
-  font-size: 0.9em;
-  color: #777;
-}
-
-/* Media query for desktop layout */
-@media (min-width: 768px) {
-  .news-row {
-      flex-direction: row;
-      align-items: center;
-  }
-
-  .news-img {
-      flex: 1;
-      margin-right: 20px;
-  }
-
-  .news-content {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 200px;
-      padding: 10px;
-  }
-
-  /* Swap positions of name and description on desktop */
-  .news-description {
-      order: 2; /* Change order */
-      flex-grow: 1;
-  }
-
-  .news-name {
-      order: 1; /* Change order */
-  }
-
-  .news-origin {
-      order: 3;
-      align-self: flex-end;
-      text-align: right;
-  }
-}
-
-
-/* Styling for each news item */
-.news-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.news-row {
-  display: flex;
-  flex-direction: column;
   padding: 10px;
 }
 
-/* Row nhỏ */
 .news-row-small {
   display: flex;
   justify-content: space-between;
@@ -823,220 +780,182 @@ header h1 {
   margin-bottom: 10px;
 }
 
-/* Styling for the news image */
 .news-img {
   flex: 1;
   margin-right: 10px;
+
+  img {
+    width: 100%;
+    height: auto;
+    @include border-radius(8px);
+  }
 }
 
-.news-img img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Styling for the news name */
 .news-name {
   flex: 2;
+
+  h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #555;
+  }
 }
 
-.news-name h2 {
-  margin: 0;
-  font-size: 1.2em;
-  color: #555;
-}
-
-/* Styling for the news description */
 .news-description {
   margin: 10px 0;
+
+  h5 {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+  }
 }
 
-.news-description h5 {
-  margin: 0;
-  font-size: 1em;
-  color: #666;
-}
-
-/* Styling for the news origin */
 .news-origin {
   text-align: right;
-}
-
-.news-origin {
   font-size: 0.9em;
   color: #777;
 }
 
-
-
-//-----End Tin Tức
-//---slug Product
+//------------------------- Slug Product -------------------------
 .preprod-product-box {
   border: 1px solid #ddd;
-  border-radius: 8px;
+  @include border-radius(8px);
   padding: 15px;
   margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  @include box-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
   background-color: #fff;
 }
+
 .preprod-product-row {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap; /* Thêm thuộc tính này */
 }
+
 .preprod-col-left {
   flex: 0 0 30%;
   padding: 10px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block; /* Loại bỏ khoảng trắng thừa dưới hình ảnh */
+  }
 }
+
 .preprod-col-right {
   flex: 0 0 70%;
   padding: 10px;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+  }
 }
-.preprod-col-right h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #333;
-}
+
 .preprod-price-origin-row {
   display: flex;
   justify-content: space-between;
 }
-.preprod-price-col, .preprod-origin-col {
+
+.preprod-price-col,
+.preprod-origin-col {
   flex: 1;
+
+  h5 {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #cf0606;
+  }
 }
-.preprod-price-col h5, .preprod-origin-col h5 {
-  margin: 5px 0;
-  font-size: 1rem;
-  color: #cf0606;
-}
-.preprod-origin-col h5{
+
+.preprod-origin-col h5 {
   margin: 5px 0;
   font-size: 1rem;
   color: #777;
 }
+
 .preprod-description {
   margin-top: 10px;
-}
-.preprod-description h5 {
-  margin: 0;
-  color: #555;
-}
-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
 
-//---End Slug Product
-
-//=------Newis
-.custom-hr {
-  border-top: 3px solid #1f04b6; /* Điều chỉnh độ dày và màu sắc */
-}
-
-//-----End Newis
-//-----------Home
-.mt-4 { margin-top: 1.5rem; } 
-.row-eq-height { 
-  display: flex; 
-  align-items: stretch; 
-  justify-content: center; 
-} 
-.custom-image-container { 
-  padding: 5px; border-radius: 10px; /* Độ bo tròn */ 
-} .custom-img-fluid { 
-  width: 100%; 
-  height: 500px; /* Chiều cao cố định cho tất cả các hình */ 
-  object-fit: cover; /* Giữ tỷ lệ ảnh và cắt phần dư */ 
-  border-radius: 10px; /* Đảm bảo hình ảnh cũng được bo tròn theo column */ 
-} 
-@media (max-width: 768px) { 
-  
-  .row-eq-height { 
-    flex-direction: column; 
-  } .carousel-item { 
-    height: 500px; /* Đảm bảo chiều cao cố định cho các mục trong trình chiếu */ 
-  } 
-  .carousel-item img { 
-    width: 100%; height: 100%; 
-    object-fit: cover; 
-    border-radius: 10px; /* Bo tròn góc cho ảnh trong chế độ mobile */ 
-  } .col-12 { 
-    padding-left: 0; 
-    padding-right: 0; 
-  } 
-
-  .custom-col-6ths { 
-    width: 50%; } 
-  } 
-  @media (min-width: 769px) { 
-    .col-md-4 { 
-      flex: 0 0 33.3333%; max-width: 30%; 
-    } 
-  } 
-  @media (min-width: 992px) { 
-    .no-gutters { 
-      margin-left: 0; 
-      margin-right: 0; 
-    } 
-    .col-lg-4 { 
-      padding-left: 2px; 
-      padding-right: 2px; 
-    } 
-    .custom-col-5ths { 
-      width: 20%; 
-    } 
-  } 
-  @media (min-width: 768px) and (max-width: 991px) { 
-    .no-gutters { 
-      margin-left: 0; margin-right: 0; 
-    } .col-md-6 { 
-      padding-left: 2px; 
-      padding-right: 2px; 
-    } .custom-col-4ths { 
-      flex: 1; 
-      max-width: 25%; 
-      box-sizing: border-box; 
-      //padding: 2px; 
-    } 
+  h5 {
+    margin: 0;
+    color: #555;
   }
+}
 
-  //
+//------------------------- Newis -------------------------
+.custom-hr {
+  border-top: 3px solid #1f04b6;
+}
 
-  //Slogun
+//------------------------- Home -------------------------
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.row-eq-height {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.custom-image-container {
+  padding: 5px;
+  @include border-radius(10px);
+}
+
+.custom-img-fluid {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  @include border-radius(10px);
+}
+
+//------------------------- Slogun -------------------------
 .slogun {
   text-align: center;
   margin-top: 30px;
 }
+
 .slogun-content {
   list-style: none;
-  
 }
+
 .slogun-text1 {
   font-size: 2rem;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
+
 .slogun-text2 {
   line-height: 25px;
   font-size: 2rem;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   animation: gradient2 5s ease-in-out infinite;
 }
+
 .slogun-text3 {
   font-size: 2rem;
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-               1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
   animation: gradient3 1s ease infinite;
 }
+
 .footer-sdt {
   animation: gradient3 1s ease infinite;
 }
+
 .extra-footer-design {
   font-size: 10px;
   color: rgb(214, 212, 212);
 }
+
 .social-color {
   animation: gradient3 1s ease infinite;
 }
@@ -1045,85 +964,128 @@ img {
   font-weight: bolder;
   letter-spacing: 2px;
 }
+
 .footer-extra-name {
   letter-spacing: 10px;
 }
 
-@keyframes gradient2 {
-  0% {
-    color: rgb(255, 243, 71);
-  }
-  100% {
-    color: rgb(236, 19, 66);
-  }
-}
-
-@keyframes gradient3 {
-  0% {
-    color: tomato;
-  }
-  50% {
-    color: turquoise;
-  }
-  100% {
-    color: rgb(236, 19, 66);
-  }
-}
-.content h2{
+.content h2 {
   font-weight: 600;
   animation: gradient5 3s ease infinite;
 }
-.content span{
+
+.content span {
   font-weight: 500;
   animation: gradient5 3s ease infinite;
 }
-@keyframes gradient5 {
-  0% {
-    color: rgb(218, 120, 8);
-  }
-  50% {
-    color: rgb(252, 195, 8);
-  }
-  100% {
-    color: rgb(18, 19, 18);
-  }
-}
-@keyframes gradient4 {
-  0% {
-    color: rgb(18, 252, 252);
-  }
-  50% {
-    color: turquoise;
-  }
-  100% {
-    color: rgb(4, 231, 80);
-  }
-}
-  //End-slogun
 
+//------------------------- About Section -------------------------
 .about-intro-extra {
   font-weight: bolder;
   color: #04806f;
 }
+
 .about-intro-extra1 {
   font-weight: bold;
   font-size: 18px;
   animation: gradient4 3s ease infinite;
 }
+
+//------------------------- Slogun Section -------------------------
 .slogun-extra {
   letter-spacing: 5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  @include text-shadow(2px, 2px, 4px, rgba(0, 0, 0, 0.2));
 }
+
 .slogun-extra1 {
   letter-spacing: 2px;
   font-weight: 600;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-.slogun-extra2 {
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  @include text-shadow(2px, 2px, 4px, rgba(0, 0, 0, 0.2));
 }
 
+.slogun-extra2 {
+  letter-spacing: 2px;
+  @include text-shadow(2px, 2px, 4px, rgba(0, 0, 0, 0.2));
+}
+
+//------------------------- Card Styles -------------------------
 .card-body {
   border: 3px dashed rgb(145, 4, 4);
+}
+
+//------------------------- Responsive Styles -------------------------
+@media (max-width: 768px) {
+  .custom-image-row img {
+    width: 30%;
+  }
+
+  .custom-header {
+    padding: 15px;
+
+    h4 {
+      font-size: 2em;
+    }
+
+    .subheader {
+      font-size: 1em;
+    }
+  }
+
+  #wrapper {
+    flex-direction: column;
+  }
+
+  ul#index_cards {
+    flex-direction: column;
+
+    li {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+
+  /* Thêm style cho sản phẩm trên mobile */
+  .preprod-product-row {
+    flex-direction: column;
+  }
+
+  .preprod-col-left {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+  }
+
+  .preprod-col-right {
+    flex: 0 0 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .col-md-4 {
+    flex: 0 0 33.3333%;
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 992px) {
+  .no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .col-lg-4 {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .col-md-6 {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
 }
