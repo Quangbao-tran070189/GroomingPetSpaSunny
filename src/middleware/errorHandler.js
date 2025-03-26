@@ -2,6 +2,7 @@ const debug = require('debug')('app:error');
 
 module.exports = function errorHandler(app) {
     // Error handling for 404 - Not Found
+    /*
     app.use((req, res, next) => {
         debug(`404 Not Found: ${req.originalUrl}`);
         res.status(404).render('404', {
@@ -20,4 +21,5 @@ module.exports = function errorHandler(app) {
             error: process.env.NODE_ENV === 'development' ? err : {}
         });
     });
+    */
 };
