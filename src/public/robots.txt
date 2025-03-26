@@ -1,11 +1,21 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /users/
-Disallow: /login/
-Disallow: /logout/
-Disallow: /dashboard/
-Disallow: /productcreate/
-Disallow: /stuffcreate/
-Disallow: /medicinecreate/
-Disallow: /newicreate/
+Allow: /
+Disallow: /admin/*
+Disallow: /users/*
+Disallow: /login/*
+Disallow: /logout/*
+Disallow: /dashboard/*
+Disallow: /productcreate/*
+Disallow: /stuffcreate/*
+Disallow: /medicinecreate/*
+Disallow: /newicreate/*
+Crawl-delay: 10
+
+# Allow static assets
+Allow: /img/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+
+# Sitemap location
 Sitemap: https://sunnypetspabaria.vn/sitemap.xml
