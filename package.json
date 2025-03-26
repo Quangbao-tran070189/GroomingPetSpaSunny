@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node src/index.js",
     "watch": "sass --watch src/resources/scss:src/public/css",
-    "start": "node --inspect src/index.js"
+    "start": "node --inspect=9230 src/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.21.0",
+    "compression": "^1.8.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.1.0",
     "connect-mongodb-session": "^5.0.0",
@@ -30,7 +31,10 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-handlebars": "^8.0.1",
+    "express-rate-limit": "^7.5.0",
     "express-session": "^1.18.1",
+    "helmet": "^8.1.0",
+    "memory-cache": "^0.2.0",
     "method-override": "^3.0.0",
     "mongoose": "^8.9.1",
     "mongoose-slug-generator": "^1.0.4",
