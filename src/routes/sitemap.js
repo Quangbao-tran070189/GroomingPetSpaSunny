@@ -20,13 +20,15 @@ const STATIC_PAGES = [
 // Model paths (sử dụng path.join để đảm bảo tính tương thích)
 let Product, Stuff, Medicine, Newi;
 try {
-    Product = require(path.join(__dirname, '..', 'app', 'models', 'Product'));
-    Stuff = require(path.join(__dirname, '..', 'app', 'models', 'Stuff'));
-    Medicine = require(path.join(__dirname, '..', 'app', 'models', 'Medicine'));
-    Newi = require(path.join(__dirname, '..', 'app', 'models', 'Newi'));
+    Product = require('../app/models/Product');
+    Stuff = require('../app/models/Stuff');
+    Medicine = require('../app/models/Medicine');
+    Newi = require('../app/models/Newi');
 } catch (e) {
-    debug('Lỗi khi tải model:', e);
-    throw new Error('Không thể tải model');
+    console.error('Lỗi khi tải model:', e);
+    // Gửi phản hồi lỗi cho client thay vì throw Error
+    module.exports = router;
+    return;
 }
 
 // Hàm tạo URL cho sitemap
@@ -51,8 +53,8 @@ router.get('/', async (req, res) => {
     try {
         // Kiểm tra SITE_URL
         if (!SITE_URL || typeof SITE_URL !== 'string' || !SITE_URL.startsWith('https://')) {
-            debug('SITE_URL không hợp lệ:', SITE_URL);
-            throw new Error('SITE_URL phải là một URL https hợp lệ.');
+            console.error('SITE_URL không hợp lệ:', SITE_URL);
+            return res.status(500).json({ error: 'SITE_URL không hợp lệ' });
         }
 
         // Kiểm tra cache
@@ -95,8 +97,8 @@ router.get('/', async (req, res) => {
             addUrlsToSitemap(smStream, news, 'newis');
 
         } catch (dbError) {
-            debug('Lỗi truy vấn database:', dbError);
-            throw new Error(`Lỗi truy vấn database: ${dbError.message}`);
+            console.error('Lỗi truy vấn database:', dbError);
+            return res.status(500).json({ error: 'Lỗi truy vấn database' });
         }
 
         smStream.end();
@@ -109,14 +111,14 @@ router.get('/', async (req, res) => {
         return sendSitemap(res, sitemap);
 
     } catch (error) {
-        debug('Lỗi tạo sitemap:', error);
+        console.error('Lỗi tạo sitemap:', error);
 
         // Đảm bảo stream được đóng khi có lỗi
         if (smStream) {
             try {
                 smStream.end();
             } catch (streamError) {
-                debug('Lỗi khi đóng stream:', streamError);
+                console.error('Lỗi khi đóng stream:', streamError);
             }
         }
 
