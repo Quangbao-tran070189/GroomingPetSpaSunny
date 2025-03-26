@@ -1,11 +1,11 @@
-    User-agent: *
-    Disallow: /admin/
-    Disallow: /users/
-    Disallow: /login/
-    Disallow: /logout/
-    Disallow: /dashboard/
-    Disallow: /productcreate/
-    Disallow: /stuffcreate/
-    Disallow: /medicinecreate/
-    Disallow: /newicreate/
-    Sitemap: https://sunnypetspabaria.vn/sitemap.xml
+User-agent: *
+Disallow: /admin/
+Disallow: /users/
+Disallow: /login/
+Disallow: /logout/
+Disallow: /dashboard/
+Disallow: /productcreate/
+Disallow: /stuffcreate/
+Disallow: /medicinecreate/
+Disallow: /newicreate/
+Sitemap: https://sunnypetspabaria.vn/sitemap.xml

@@ -10,8 +10,9 @@ const newisRouter = require('./newis');
 const siteRouter = require('./site');
 const usersRouter = require('./users');
 const adminRouter = require('./admin');
+const sitemapRoute = require('./sitemap'); // Adjust path if needed
 
-function route(app) {
+module.exports = function route(app) {
   app.use('/me', meRouter);
   app.use('/products', productsRouter);
   app.use('/stuffs', stuffsRouter);
@@ -20,8 +21,6 @@ function route(app) {
   //app.use('/abouts', aboutsRouter);
   app.use('/users', usersRouter);
   app.use('/admin', adminRouter);
-  //app.use('/abouts', siteRouter);
+  app.use('/sitemap.xml', sitemapRoute); // Register the sitemap route
   app.use('/', siteRouter);
-}
-
-module.exports = route;
+};
