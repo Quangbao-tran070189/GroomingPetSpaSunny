@@ -3,6 +3,62 @@
         <h1 class="roboto text-center">CÁC DỊCH VỤ CHĂM SÓC THÚ CƯNG</h1>
     
 </section>
+<div class="custom-gallery">
+    <div class="mt-4">
+        <div class="abouts-custom-image-row first-row">
+            <a href="/img/about1.webp" data-lightbox="gallery" data-title="Cắt lông chó">
+                <img src="/img/about1.webp" alt="cắt lông chó">
+            </a>
+            <a href="/img/about2.webp" data-lightbox="gallery" data-title="Tỉa lông chó">
+                <img src="/img/about2.webp" alt="tỉa lông chó">
+            </a>
+            <a href="/img/about3.webp" data-lightbox="gallery" data-title="Chăm sóc thú cưng">
+                <img src="/img/about3.webp" alt="chăm sóc thú cưng">
+            </a>
+            <a href="/img/about4.webp" data-lightbox="gallery" data-title="Khách sạn cho thú cưng">
+                <img src="/img/about4.webp" alt="khách sạn cho thú cưng">
+            </a>
+            <a href="/img/about5.webp" data-lightbox="gallery" data-title="Gửi chó ngày Tết">
+                <img src="/img/about5.webp" alt="gửi chó ngày Tết">
+            </a>
+            <a href="/img/about6.webp" data-lightbox="gallery" data-title="Gửi mèo ngày Tết">
+                <img src="/img/about6.webp" alt="gửi mèo ngày Tết">
+            </a>
+            <a href="/img/about7.webp" data-lightbox="gallery" data-title="Nhuộm lông thú cưng">
+                <img src="/img/about7.webp" alt="nhuộm lông thú cưng">
+            </a>
+            <a href="/img/about8.webp" data-lightbox="gallery" data-title="Grooming pet spa">
+                <img src="/img/about8.webp" alt="grooming pet spa">
+            </a>
+            <a href="/img/about9.webp" data-lightbox="gallery" data-title="Vệ sinh thú cưng">
+                <img src="/img/about9.webp" alt="vệ sinh thú cưng">
+            </a>
+            <a href="/img/about10.webp" data-lightbox="gallery" data-title="pet spa Phước Tỉnh">
+                <img src="/img/about10.webp" alt="tắm cho Poodle">
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll('.abouts-custom-image-row img');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        images.forEach(image => {
+            observer.observe(image);
+        });
+    });
+</script>
 
 <section class="mt-4">
     <div class="container">
