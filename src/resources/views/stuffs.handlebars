@@ -1,36 +1,29 @@
 <!-- stuffs Page-->
 
-    <!-- stuffs Page -->
-
 <div class="mt-4">
-    <div id="contact" class="promotion-header background-animation row">
-        <div class="col-12">
-            <span class="roboto">Quầy Phụ Kiện Thú Cưng</span>
-        </div>
-    </div>
+    <h1 class="promotion-header background-animation roboto text-center">Quầy Phụ Kiện Thú Cưng</h1>
+    <meta name="description" content="Đa dạng phụ kiện cho thú cưng tại Sunny Pet Spa Bà Rịa. Từ đồ chơi, quần áo đến vật dụng chăm sóc, đảm bảo chất lượng và an toàn.">
     <div class="row">
         {{#each stuffs}}
-        <div class="custom-col-5ths custom-col-4ths custom-col-6ths card-frame">
+        <div class="custom-col-5ths custom-col-4ths custom-col-6ths card-frame" itemscope itemtype="http://schema.org/Product">
             <div class="card card-frame">
                 <a href="/stuffs/{{this.slug}}">
-                    <img src="{{this.image}}" class="card-img-top" alt="cắt móng và vệ sinh tai cho thú cưng">
+                    <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}" itemprop="image" loading="lazy">
                 </a>
                 <div class="card-body card-body-frame">
                     <a href="/stuffs/{{this.slug}}">
-                        <h5 class="card-title card-name">{{this.name}}</h5>
+                        <h5 class="card-title card-name" itemprop="name">{{this.name}}</h5>
                     </a>
                     <div class="price-space">
-                        <div class="card-text card-price">{{this.price}}</div>
-                        <div class="card-text card-origin">{{this.origin}}</div>
+                        <div class="card-text card-price" itemprop="price">{{this.price}}</div>
+                        <div class="card-text card-origin" itemprop="brand">{{this.origin}}</div>
                     </div>
                     
-                    <p class="card-text card-description">{{this.description}}</p>
-                <a href="#" class="btn btn-primary card-button">Có bán tại shop</a>
+                    <p class="card-text card-description" itemprop="description">{{this.description}}</p>
+                <a href="/stuffs/{{this.slug}}" class="btn btn-primary card-button">Xem chi tiết</a>
                 </div>
             </div>
         </div>
         {{/each}}
     </div>
 </div>
-
-

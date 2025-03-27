@@ -1,182 +1,101 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pet Spa Baria | Pet Spa Long Điền | Pet Spa Long Hải | Pet Spa Phước Tỉnh</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Lightbox CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <style>
-    /* Sunny Header */
-    .sunny-header {
-      background-color: #f8f9fa;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
-
-    .sunny-header h4 {
-      color: #333;
-    }
-
-    .sunny-header h5.subheader {
-      color: #666;
-      margin-top: 10px;
-    }
-
-    /* Image Hover Effect */
-    .custom-image-row img {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 10px;
-      margin: 5px;
-      width: 100%;
-      max-width: 200px;
-      height: auto;
-    }
-
-    .custom-image-row img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Fade-in Animation */
-    .custom-image-row img {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .custom-image-row img.fade-in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive Grid */
-    .custom-image-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .custom-image-row a {
-      flex: 1 1 200px; /* Flexbox để ảnh tự động co giãn */
-      margin: 5px;
-    }
-
-    @media (max-width: 768px) {
-      .custom-image-row a {
-        flex: 1 1 150px; /* Điều chỉnh kích thước ảnh trên mobile */
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <div class="mt-4 sunny-header">
+<!-- Header -->
+<div class="mt-4 abouts-sunny-header">
     <h4 class="text-center slogun-extra2">CÙNG SUNNY PET SPA KHÁM PHÁ NHỮNG KHOẢNH KHẮC ĐÁNG YÊU!</h4>
-    <h5 class="text-center subheader">Dưới đây là những hình ảnh đáng nhớ mà <span class="about-content-text1 slogun-extra2">Sunny Pet Spa Bà Rịa</span> đã lưu giữ lại trong quá trình chăm sóc và phục vụ các bé thú cưng cùng quý khách hàng thân yêu. Mỗi bức ảnh không chỉ là khoảnh khắc đẹp mà còn là minh chứng cho sự tận tâm và tình yêu thương mà chúng tôi dành cho các bé.</h5>
-  </div>
+    <h5 class="text-center subheader">Dưới đây là những hình ảnh đáng nhớ mà <span
+            class="about-content-text1 slogun-extra2">Sunny Pet Spa Bà Rịa</span> đã lưu giữ lại trong quá trình chăm
+        sóc và phục vụ các bé thú cưng cùng quý khách hàng thân yêu. Mỗi bức ảnh không chỉ là khoảnh khắc đẹp mà còn
+        là minh chứng cho sự tận tâm và tình yêu thương mà chúng tôi dành cho các bé.</h5>
+</div>
 
-  <!-- Gallery -->
-  <div class="custom-gallery">
+<!-- Gallery -->
+<div class="custom-gallery">
     <div class="mt-4">
-      <div class="custom-image-row first-row">
-        <a href="/img/about1.webp" data-lightbox="gallery" data-title="Cắt lông chó">
-          <img src="/img/about1.webp" alt="cắt lông chó">
-        </a>
-        <a href="/img/about2.webp" data-lightbox="gallery" data-title="Tỉa lông chó">
-          <img src="/img/about2.webp" alt="tỉa lông chó">
-        </a>
-        <a href="/img/about3.webp" data-lightbox="gallery" data-title="Chăm sóc thú cưng">
-          <img src="/img/about3.webp" alt="chăm sóc thú cưng">
-        </a>
-        <a href="/img/about4.webp" data-lightbox="gallery" data-title="Khách sạn cho thú cưng">
-          <img src="/img/about4.webp" alt="khách sạn cho thú cưng">
-        </a>
-        <a href="/img/about5.webp" data-lightbox="gallery" data-title="Gửi chó ngày Tết">
-          <img src="/img/about5.webp" alt="gửi chó ngày Tết">
-        </a>
-        <a href="/img/about6.webp" data-lightbox="gallery" data-title="Gửi mèo ngày Tết">
-          <img src="/img/about6.webp" alt="gửi mèo ngày Tết">
-        </a>
-        <a href="/img/about7.webp" data-lightbox="gallery" data-title="Nhuộm lông thú cưng">
-          <img src="/img/about7.webp" alt="nhuộm lông thú cưng">
-        </a>
-        <a href="/img/about8.webp" data-lightbox="gallery" data-title="Grooming pet spa">
-          <img src="/img/about8.webp" alt="grooming pet spa">
-        </a>
-        <a href="/img/about9.webp" data-lightbox="gallery" data-title="Vệ sinh thú cưng">
-          <img src="/img/about9.webp" alt="vệ sinh thú cưng">
-        </a>
-        <a href="/img/about10.webp" data-lightbox="gallery" data-title="pet spa Phước Tỉnh">
-          <img src="/img/about10.webp" alt="tắm cho Poodle">
-        </a>
-      </div>
+        <div class="abouts-custom-image-row first-row">
+            <a href="/img/about1.webp" data-lightbox="gallery" data-title="Cắt lông chó">
+                <img src="/img/about1.webp" alt="cắt lông chó">
+            </a>
+            <a href="/img/about2.webp" data-lightbox="gallery" data-title="Tỉa lông chó">
+                <img src="/img/about2.webp" alt="tỉa lông chó">
+            </a>
+            <a href="/img/about3.webp" data-lightbox="gallery" data-title="Chăm sóc thú cưng">
+                <img src="/img/about3.webp" alt="chăm sóc thú cưng">
+            </a>
+            <a href="/img/about4.webp" data-lightbox="gallery" data-title="Khách sạn cho thú cưng">
+                <img src="/img/about4.webp" alt="khách sạn cho thú cưng">
+            </a>
+            <a href="/img/about5.webp" data-lightbox="gallery" data-title="Gửi chó ngày Tết">
+                <img src="/img/about5.webp" alt="gửi chó ngày Tết">
+            </a>
+            <a href="/img/about6.webp" data-lightbox="gallery" data-title="Gửi mèo ngày Tết">
+                <img src="/img/about6.webp" alt="gửi mèo ngày Tết">
+            </a>
+            <a href="/img/about7.webp" data-lightbox="gallery" data-title="Nhuộm lông thú cưng">
+                <img src="/img/about7.webp" alt="nhuộm lông thú cưng">
+            </a>
+            <a href="/img/about8.webp" data-lightbox="gallery" data-title="Grooming pet spa">
+                <img src="/img/about8.webp" alt="grooming pet spa">
+            </a>
+            <a href="/img/about9.webp" data-lightbox="gallery" data-title="Vệ sinh thú cưng">
+                <img src="/img/about9.webp" alt="vệ sinh thú cưng">
+            </a>
+            <a href="/img/about10.webp" data-lightbox="gallery" data-title="pet spa Phước Tỉnh">
+                <img src="/img/about10.webp" alt="tắm cho Poodle">
+            </a>
+        </div>
     </div>
     <div class="mt-4">
-      <div class="custom-image-row second-row">
-        <a href="/img/about11.webp" data-lightbox="gallery" data-title="Spa thú cưng">
-          <img src="/img/about11.webp" alt="spa thú cưng">
-        </a>
-        <a href="/img/about12.webp" data-lightbox="gallery" data-title="Cắt tỉa lông thú cưng">
-          <img src="/img/about12.webp" alt="cắt tỉa lông thú cưng">
-        </a>
-        <a href="/img/about13.webp" data-lightbox="gallery" data-title="Chăm sóc chó mèo">
-          <img src="/img/about13.webp" alt="chăm sóc chó mèo">
-        </a>
-        <a href="/img/about14.webp" data-lightbox="gallery" data-title="Dịch vụ thú cưng">
-          <img src="/img/about14.webp" alt="dịch vụ thú cưng">
-        </a>
-        <a href="/img/about15.webp" data-lightbox="gallery" data-title="Spa thú cưng Bà Rịa">
-          <img src="/img/about15.webp" alt="spa thú cưng Bà Rịa">
-        </a>
-        <a href="/img/about16.webp" data-lightbox="gallery" data-title="Gửi chó mèo">
-          <img src="/img/about16.webp" alt="gửi chó mèo">
-        </a>
-        <a href="/img/about17.webp" data-lightbox="gallery" data-title="Làm đẹp thú cưng">
-          <img src="/img/about17.webp" alt="làm đẹp thú cưng">
-        </a>
-        <a href="/img/about18.webp" data-lightbox="gallery" data-title="pet spa long hải">
-          <img src="/img/about18.webp" alt="gửi chó mèo">
-        </a>
-        <a href="/img/about19.webp" data-lightbox="gallery" data-title="Hotel thú cưng">
-          <img src="/img/about19.webp" alt="hotel thú cưng">
-        </a>
-        <a href="/img/about20.webp" data-lightbox="gallery" data-title="Pet spa Bà Rịa">
-          <img src="/img/about20.webp" alt="pet spa Bà Rịa">
-        </a>
-      </div>
+        <div class="abouts-custom-image-row second-row">
+            <a href="/img/about11.webp" data-lightbox="gallery" data-title="Spa thú cưng">
+                <img src="/img/about11.webp" alt="spa thú cưng">
+            </a>
+            <a href="/img/about12.webp" data-lightbox="gallery" data-title="Cắt tỉa lông thú cưng">
+                <img src="/img/about12.webp" alt="cắt tỉa lông thú cưng">
+            </a>
+            <a href="/img/about13.webp" data-lightbox="gallery" data-title="Chăm sóc chó mèo">
+                <img src="/img/about13.webp" alt="chăm sóc chó mèo">
+            </a>
+            <a href="/img/about14.webp" data-lightbox="gallery" data-title="Dịch vụ thú cưng">
+                <img src="/img/about14.webp" alt="dịch vụ thú cưng">
+            </a>
+            <a href="/img/about15.webp" data-lightbox="gallery" data-title="Spa thú cưng Bà Rịa">
+                <img src="/img/about15.webp" alt="spa thú cưng Bà Rịa">
+            </a>
+            <a href="/img/about16.webp" data-lightbox="gallery" data-title="Gửi chó mèo">
+                <img src="/img/about16.webp" alt="gửi chó mèo">
+            </a>
+            <a href="/img/about17.webp" data-lightbox="gallery" data-title="Làm đẹp thú cưng">
+                <img src="/img/about17.webp" alt="làm đẹp thú cưng">
+            </a>
+            <a href="/img/about18.webp" data-lightbox="gallery" data-title="pet spa long hải">
+                <img src="/img/about18.webp" alt="gửi chó mèo">
+            </a>
+            <a href="/img/about19.webp" data-lightbox="gallery" data-title="Hotel thú cưng">
+                <img src="/img/about19.webp" alt="hotel thú cưng">
+            </a>
+            <a href="/img/about20.webp" data-lightbox="gallery" data-title="Pet spa Bà Rịa">
+                <img src="/img/about20.webp" alt="pet spa Bà Rịa">
+            </a>
+        </div>
     </div>
-  </div>
+</div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Lightbox JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-  <!-- Custom JS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const images = document.querySelectorAll('.custom-image-row img');
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll('.abouts-custom-image-row img');
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
         });
-      }, { threshold: 0.1 });
 
-      images.forEach(image => {
-        observer.observe(image);
-      });
+        images.forEach(image => {
+            observer.observe(image);
+        });
     });
-  </script>
-</body>
-</html>
+</script>

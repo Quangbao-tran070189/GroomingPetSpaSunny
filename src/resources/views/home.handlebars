@@ -7,54 +7,72 @@
 <section class="mt-4">
     <div class="container">
         <div class="row row-eq-height d-none d-md-flex">
-            <div class="col-md-6 custom-image-container">
-                <picture>
-                    <source srcset="/img/Service2.webp" type="image/webp">
-                    <img srcset="/img/Service2-320.jpg 320w,
-                                 /img/Service2-480.jpg 480w,
-                                 /img/Service2-800.jpg 800w" sizes="(max-width: 320px) 280px,
-                                                               (max-width: 480px) 440px,
-                                                               800px" src="/img/Service2.jpg" loading="lazy"
-                        class="custom-img-fluid" alt="Dịch vụ cắt tỉa lông thú cưng chuyên nghiệp">
-                </picture>
+            <div class="col-md-6">
+                <div class="service-item">
+                    <picture>
+                        <source srcset="/img/Service2.webp" type="image/webp">
+                        <img srcset="/img/Service2-320.jpg 320w,
+                                     /img/Service2-480.jpg 480w,
+                                     /img/Service2-800.jpg 800w" sizes="(max-width: 320px) 280px,
+                                                                   (max-width: 480px) 440px,
+                                                                   800px" src="/img/Service2.jpg" loading="lazy"
+                            class="img-fluid" alt="Dịch vụ cắt tỉa lông thú cưng chuyên nghiệp" width="800"
+                            height="600">
+                    </picture>
+                    <div class="service-text">
+                        <h3>Dịch vụ cắt tỉa lông thú cưng chuyên nghiệp</h3>
+                        
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 custom-image-container">
-                <picture>
-                    <source srcset="/img/Service3.webp" type="image/webp">
-                    <img srcset="/img/Service3-320.jpg 320w,
-                                 /img/Service3-480.jpg 480w,
-                                 /img/Service3-800.jpg 800w" sizes="(max-width: 320px) 280px,
-                                                               (max-width: 480px) 440px,
-                                                               800px" src="/img/Service3.jpg" loading="lazy"
-                        class="custom-img-fluid" alt="Dịch vụ tắm và chăm sóc da lông cho thú cưng">
-                </picture>
+            <div class="col-md-6">
+                <div class="service-item">
+                    <picture>
+                        <source srcset="/img/Service3.webp" type="image/webp">
+                        <img srcset="/img/Service3-320.jpg 320w,
+                                     /img/Service3-480.jpg 480w,
+                                     /img/Service3-800.jpg 800w" sizes="(max-width: 320px) 280px,
+                                                                   (max-width: 480px) 440px,
+                                                                   800px" src="/img/Service3.jpg" loading="lazy"
+                            class="img-fluid" alt="Dịch vụ tắm và chăm sóc da lông cho thú cưng" width="800"
+                            height="600">
+                    </picture>
+                    <div class="service-text">
+                        <h3>Dịch vụ tắm và chăm sóc da lông cho thú cưng</h3>
+                       
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div id="customCarouselMobile" class="carousel slide mt-4 d-block d-md-none" data-ride="carousel">
+        <div id="customCarouselMobile" class="carousel slide mt-4 d-block d-md-none" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/img/Service2.webp" class="d-block w-100" alt="Dịch vụ cắt tỉa lông thú cưng">
+                    <img src="/img/Service2.webp" class="d-block w-100" alt="Dịch vụ cắt tỉa lông thú cưng" width="600"
+                        height="450" loading="lazy">
                 </div>
                 <div class="carousel-item">
-                    <img src="/img/Service3.webp" class="d-block w-100" alt="Dịch vụ tắm và chăm sóc da lông cho thú cưng">
+                    <img src="/img/Service3.webp" class="d-block w-100" alt="Dịch vụ tắm và chăm sóc da lông cho thú cưng"
+                        width="600" height="450" loading="lazy">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#customCarouselMobile" role="button" data-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#customCarouselMobile"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#customCarouselMobile" role="button" data-slide="next">
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#customCarouselMobile"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </section>
 
 <section id="products" class="mt-4 promotion-header background-animation">
     
-        <h2 class="slogun-extra2 text-center">THỨC ĂN - PHỤ KIỆN - Y TẾ CHO PET</h2>
+        <h2 class="slogun-extra2 text-center">THỨC ĂN - PHỤ KIỆN - ĐỒ DÙNG CHO THÚ CƯNG</h2>
     
 </section>
 
@@ -71,7 +89,8 @@
                                          /img/home-product1-800.jpg 800w" sizes="(max-width: 320px) 280px,
                                                                        (max-width: 480px) 440px,
                                                                        800px" src="/img/home-product1.jpg" loading="lazy"
-                                class="card-img-top" alt="Thức ăn cho chó mèo chất lượng cao">
+                                class="home-product-img" alt="Thức ăn cho chó mèo chất lượng cao" width="800"
+                                height="600">
                         </picture>
                     </a>
                     <div class="card-body card-text-describe">
@@ -92,7 +111,7 @@
                                          /img/home-product2-800.jpg 800w" sizes="(max-width: 320px) 280px,
                                                                        (max-width: 480px) 440px,
                                                                        800px" src="/img/home-product2.jpg" loading="lazy"
-                                class="card-img-top" alt="Phụ kiện cho thú cưng">
+                                class="home-product-img" alt="Phụ kiện cho thú cưng" width="800" height="600">
                         </picture>
                     </a>
                     <div class="card-body card-text-describe">
@@ -113,7 +132,7 @@
                                          /img/home-product3-800.jpg 800w" sizes="(max-width: 320px) 280px,
                                                                        (max-width: 480px) 440px,
                                                                        800px" src="/img/home-product3.jpg" loading="lazy"
-                                class="card-img-top" alt="Chuồng và vật dụng cho thú cưng">
+                                class="home-product-img" alt="Chuồng và vật dụng cho thú cưng" width="800" height="600">
                         </picture>
                     </a>
                     <div class="card-body card-text-describe">
@@ -307,7 +326,7 @@
                         <span class="about-content-color slogun-extra2">đón và trả pet tận nhà</span>
                         <span>một cách nhanh chóng và tiện lợi.</span>
                         <div class="about-separate">
-                            <img src="/img/logo-finger1.png" alt="biểu tượng ngón tay">
+                            <img src="/img/logo-finger1.png" alt="biểu tượng ngón tay" width="50" height="50">
                         </div>
                         <div class="about-content-infor">
                             <span>Địa chỉ:</span>
@@ -330,7 +349,7 @@
                             0907.060.068 (Cẩm Tú)
                         </div>
                         <div class="about-separate">
-                            <img src="/img/logo-finger1.png" alt="biểu tượng ngón tay">
+                            <img src="/img/logo-finger1.png" alt="biểu tượng ngón tay" width="50" height="50">
                         </div>
                         <div class="about-content-infor ">
                             <span>Website:</span>

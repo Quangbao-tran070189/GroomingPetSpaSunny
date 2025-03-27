@@ -1,218 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cắt Tỉa Lông Thú Cưng | Sunny Pet Spa Bà Rịa</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    @import url("https://fonts.googleapis.com/css?family=Varela+Round");
-
-    .custom-body {
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-      background: #d7ffde;
-      
-    }
-
-    .custom-html {
-      box-sizing: border-box;
-    }
-
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-      padding: 0;
-      margin: 0;
-      letter-spacing: 1.1px;
-    }
-
-    .navbar-nav .nav-link {
-      color: #ffffff !important;
-      transition: color 0.3s ease-in-out;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #ffcc00 !important;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      transition: color 0.3s ease-in-out;
-    }
-
-    .navbar-toggler {
-      transition: transform 0.3s ease-in-out;
-      background-color: #ffcc00;
-      border: none;
-    }
-
-    .navbar-toggler:hover {
-      transform: rotate(90deg);
-    }
-
-    .navbar-toggler-icon {
-      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
-    }
-
-    .custom-header {
-      animation: slideDown 0.5s forwards;
-    }
-
-    @keyframes slideDown {
-      from {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .header-logo {
-      display: flex;
-      align-items: center;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-10px);
-      }
-      60% {
-        transform: translateY(-5px);
-      }
-    }
-
-    .header-logo:hover {
-      animation: none;
-      transform: scale(1.1);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .nav-item.slide-in {
-      animation: slideIn 0.5s forwards;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .dropdown-menu {
-      animation: slideFadeIn 0.3s forwards;
-      transform-origin: top center;
-    }
-
-    @keyframes slideFadeIn {
-      from {
-        transform: translateY(-10px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .navbar-collapse {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .navbar-collapse .dropdown-menu {
-        position: static;
-        float: none;
-      }
-
-      .navbar-collapse .dropdown-item {
-        display: block;
-        width: 100%;
-        text-align: left;
-      }
-    }
-  </style>
-</head>
-<body class="custom-body">
-  <nav class="navbar navbar-expand-lg custom-header position-sticky top-0 w-100">
+<nav class="navbar navbar-expand-lg header-navbar position-sticky top-0 w-100">
     <div class="container-fluid">
-      <a class="navbar-brand mystery-quest-regular" href="/">
-        <div class="header-logo">
-          <span>Sunny Pet Spa Bà Rịa</span>
-        </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center caveat-brush-regular" id="navbarSupportedContent">
-        <ul class="navbar-nav text-white text-center">
-          <li class="nav-item text-white slide-in">
-            <a class="nav-link active" aria-current="page" href="/">Trang Chủ</a>
-          </li>
-          <li class="nav-item text-white slide-in">
-            <a class="nav-link" href="/abouts">Giới Thiệu</a>
-          </li>
-          <li class="nav-item text-white slide-in">
-            <a class="nav-link" href="/newis">Tin Tức</a>
-          </li>
-          <li class="nav-item dropdown slide-in">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Thực Phẩm & Phụ Kiện
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/products">Quầy Thực Phẩm</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/stuffs">Quầy Phụ Kiện</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/medicines">Quầy Chuồng & Vật Dụng</a></li>
+        <a class="navbar-brand mystery-quest-regular" href="/">
+            <div class="header-logo">
+                <span>Sunny Pet Spa Bà Rịa</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center caveat-brush-regular"
+            id="navbarSupportedContent">
+            <ul class="navbar-nav text-white text-center">
+                <li class="nav-item text-white slide-in">
+                    <a class="nav-link active" aria-current="page" href="/">Trang Chủ</a>
+                </li>
+                <li class="nav-item text-white slide-in">
+                    <a class="nav-link" href="/abouts">Giới Thiệu</a>
+                </li>
+                <li class="nav-item text-white slide-in">
+                    <a class="nav-link" href="/newis">Tin Tức</a>
+                </li>
+                <li class="nav-item dropdown slide-in">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Thực Phẩm & Phụ Kiện
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/products">Quầy Thực Phẩm</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/stuffs">Quầy Phụ Kiện</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/medicines">Quầy Chuồng & Vật Dụng</a></li>
+                    </ul>
+                </li>
             </ul>
-          </li>
-        </ul>
-        {{#if user}}
-        <li class="nav-item dropdown text-white slide-in">
-          <a class="nav-link dropdown-toggle header-login-name-right" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Chào {{#each user}} {{this.name}} {{/each}}
-          </a>
-          <ul class="dropdown-menu">
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/products/productcreate">Đăng Thực Phẩm</a></li>
-            <li><a class="dropdown-item" href="me/stored/products">Chỉnh sửa Thực Phẩm</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/stuffs/stuffcreate">Đăng Phụ Kiện</a></li>
-            <li><a class="dropdown-item" href="/me/stored/stuffs">Chỉnh sửa Phụ Kiện</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/medicines/medicinecreate">Đăng Chuồng & Vật Dụng</a></li>
-            <li><a class="dropdown-item" href="/me/stored/medicines">Chỉnh sửa Chuồng & Vật Dụng</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/newis/newicreate">Đăng Tin Tức</a></li>
-            <li><a class="dropdown-item" href="/me/stored/newis">Chỉnh sửa Tin Tức</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/admin/users">Tài khoản</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/users/logout">Đăng Xuất</a></li>
-          </ul>
-        </li>
-        {{else}}
-        <li class="nav-item text-white slide-in">
-          <a class="nav-link" href="/users/login">Đăng Nhập</a>
-        </li>
-        {{/if}}
-      </div>
+            {{#if user}}
+            <li class="nav-item dropdown text-white slide-in">
+                <a class="nav-link dropdown-toggle header-login-name-right" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Chào {{#each user}} {{this.name}} {{/each}}
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/products/productcreate">Đăng Thực Phẩm</a></li>
+                    <li><a class="dropdown-item" href="me/stored/products">Chỉnh sửa Thực Phẩm</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/stuffs/stuffcreate">Đăng Phụ Kiện</a></li>
+                    <li><a class="dropdown-item" href="/me/stored/stuffs">Chỉnh sửa Phụ Kiện</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/medicines/medicinecreate">Đăng Chuồng & Vật Dụng</a></li>
+                    <li><a class="dropdown-item" href="/me/stored/medicines">Chỉnh sửa Chuồng & Vật Dụng</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/newis/newicreate">Đăng Tin Tức</a></li>
+                    <li><a class="dropdown-item" href="/me/stored/newis">Chỉnh sửa Tin Tức</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/admin/users">Tài khoản</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/users/logout">Đăng Xuất</a></li>
+                </ul>
+            </li>
+            {{else}}
+            <li class="nav-item text-white slide-in">
+                <a class="nav-link" href="/users/login">Đăng Nhập</a>
+            </li>
+            {{/if}}
+        </div>
     </div>
-  </nav>
+</nav>
 
-  <!-- Slicer -->
-    <div class="slicer">
+<!-- Slicer -->
+<div class="slicer">
     <picture>
         <source srcset="/img/slicer3.webp" type="image/webp">
         <img srcset="/img/slicer3-320.jpg 320w,
@@ -226,24 +101,17 @@
             loading="lazy">
     </picture>
 </div>
-    <div class="slogun">
-        <ul class="slogun-content">
-            <li class="slogun-text1 slogun-extra1">
-                Sunny Pet Spa Baria
-            </li>
-            <li class="slogun-text2 slogun-extra">
-                Đưa Đón Pet Tận Nhà
-            </li>
-            <li class="slogun-text3 slogun-extra2">
-                Liên hệ Danh nha 0933.054.064 - 0907.060.068 (Cẩm Tú)
-            </li>
-        </ul>
-    </div>
-  <!-- End Slicer -->
-
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+<div class="slogun">
+    <ul class="slogun-content">
+        <li class="slogun-text1 slogun-extra1">
+            Sunny Pet Spa Baria
+        </li>
+        <li class="slogun-text2 slogun-extra">
+            Đưa Đón Pet Tận Nhà
+        </li>
+        <li class="slogun-text3 slogun-extra2">
+            Liên hệ Danh nha 0933.054.064 - 0907.060.068 (Cẩm Tú)
+        </li>
+    </ul>
+</div>
+<!-- End Slicer -->

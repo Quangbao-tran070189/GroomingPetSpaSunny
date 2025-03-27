@@ -1,4 +1,4 @@
-//------------------------- Variables -------------------------
+// ------------------------- Variables -------------------------
 $primary-color: #007bff;
 $secondary-color: #6c757d;
 $font-family: "Roboto", sans-serif;
@@ -6,7 +6,7 @@ $border-radius: 10px;
 $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 $green-color: #08b88f;
 
-//------------------------- Mixins -------------------------
+// ------------------------- Mixins -------------------------
 @mixin text-shadow($x: 2px, $y: 2px, $blur: 4px, $color: rgba(0, 0, 0, 0.2)) {
   text-shadow: $x $y $blur $color;
 }
@@ -19,7 +19,7 @@ $green-color: #08b88f;
   box-shadow: $shadow;
 }
 
-//------------------------- Keyframes -------------------------
+// ------------------------- Keyframes -------------------------
 @keyframes slideInAnimation {
   0% {
     transform: translateX(-100%);
@@ -129,14 +129,14 @@ $green-color: #08b88f;
   }
 }
 
-//------------------------- General Styles -------------------------
+// ------------------------- General Styles -------------------------
 body {
   font-family: $font-family;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #d9f5f5;
+  background-color: #def0df;
 }
 
 .roboto {
@@ -160,7 +160,7 @@ pre {
   margin-right: 4px;
 }
 
-//------------------------- Navigation -------------------------
+// ------------------------- Navigation -------------------------
 .nav-link {
   transition: color 0.3s ease-in-out;
 
@@ -187,7 +187,7 @@ pre {
 }
 
 .navbar {
-  box-shadow: $box-shadow;
+  @include box-shadow($box-shadow);
 }
 
 .header-logo img {
@@ -198,7 +198,7 @@ pre {
   }
 }
 
-//------------------------- Animations -------------------------
+// ------------------------- Animations -------------------------
 .slide-in {
   transform: translateX(-100%);
   animation: slideInAnimation 1s forwards;
@@ -208,7 +208,7 @@ pre {
   animation: bounceAnimation 1s infinite;
 }
 
-//------------------------- Custom Gallery -------------------------
+// ------------------------- Custom Gallery -------------------------
 .custom-gallery {
   display: flex;
   flex-direction: column;
@@ -244,7 +244,7 @@ pre {
   animation: scrollLeft 50s linear infinite;
 }
 
-//------------------------- Header Title -------------------------
+// ------------------------- Header Title -------------------------
 .custom-header {
   padding: 20px;
   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
@@ -272,21 +272,21 @@ pre {
   }
 }
 
-//------------------------- Background Animation -------------------------
+// ------------------------- Background Animation -------------------------
 .background-animation {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
 
-//------------------------- Font Styles -------------------------
+// ------------------------- Font Styles -------------------------
 .mystery-quest-regular {
   font-weight: 400;
   font-style: normal;
   font-family: "Mystery Quest", system-ui;
 }
 
-//------------------------- Cards -------------------------
+// ------------------------- Cards -------------------------
 h1 {
   color: $green-color;
 }
@@ -335,7 +335,7 @@ p {
   border-style: none;
 }
 
-//------------------------- Store Products -------------------------
+// ------------------------- Store Products -------------------------
 .btn-fix-separate {
   display: flex;
   justify-content: space-evenly;
@@ -366,14 +366,14 @@ p {
   margin-right: -8px;
 }
 
-//------------------------- Navigation -------------------------
+// ------------------------- Navigation -------------------------
 .nav-item,
 .dropdown-menu {
   list-style: none;
 }
 
 .custom-header {
-  background-color: #9bf0dc;
+  background-color: #ddf123;
   z-index: 1030;
   position: sticky;
   top: 0;
@@ -412,7 +412,7 @@ p {
   z-index: 1050;
 }
 
-//------------------------- Animation -------------------------
+// ------------------------- Animation -------------------------
 #content {
   margin-bottom: 30px;
 }
@@ -440,7 +440,7 @@ p {
   }
 }
 
-//------------------------- Slicer -------------------------
+// ------------------------- Slicer -------------------------
 .custom-carousel-img {
   width: 100%;
   height: auto;
@@ -465,17 +465,17 @@ p {
   max-width: 100%;
 }
 
-//------------------------- Home: Product -------------------------
+// ------------------------- Home: Product -------------------------
 .card-text-describe a {
   text-decoration: none;
   color: #333;
 }
 
 .card {
-  box-shadow: 2px 2px 10px #000;
+  @include box-shadow(2px 2px 10px #000);
 }
 
-//------------------------- Home - Images Area -------------------------
+// ------------------------- Home - Images Area -------------------------
 #wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -570,7 +570,7 @@ ul:hover #card-5 {
   }
 }
 
-//------------------------- About-contact -------------------------
+// ------------------------- About-contact -------------------------
 .about-space {
   display: flex;
   flex-wrap: wrap;
@@ -665,7 +665,7 @@ ul:hover #card-5 {
   }
 }
 
-//------------------------- Product Box -------------------------
+// ------------------------- Product Box -------------------------
 .product-box {
   border: 1px solid #ddd;
   @include border-radius(8px);
@@ -716,7 +716,7 @@ ul:hover #card-5 {
   }
 }
 
-//------------------------- Home.handlebars -------------------------
+// ------------------------- Home.handlebars -------------------------
 .swiper-container {
   width: 100%;
   height: auto;
@@ -735,7 +735,7 @@ ul:hover #card-5 {
   }
 }
 
-//------------------------- Newis Styles -------------------------
+// ------------------------- Newis Styles -------------------------
 .container {
   width: calc(100% - 8px);
   margin: 0 auto;
@@ -817,7 +817,7 @@ header h1 {
   color: #777;
 }
 
-//------------------------- Slug Product -------------------------
+// ------------------------- Slug Product -------------------------
 .preprod-product-box {
   border: 1px solid #ddd;
   @include border-radius(8px);
@@ -888,12 +888,12 @@ header h1 {
   }
 }
 
-//------------------------- Newis -------------------------
+// ------------------------- Newis -------------------------
 .custom-hr {
   border-top: 3px solid #1f04b6;
 }
 
-//------------------------- Home -------------------------
+// ------------------------- Home -------------------------
 .mt-4 {
   margin-top: 1.5rem;
 }
@@ -916,7 +916,7 @@ header h1 {
   @include border-radius(10px);
 }
 
-//------------------------- Slogun -------------------------
+// ------------------------- Slogun -------------------------
 .slogun {
   text-align: center;
   margin-top: 30px;
@@ -979,7 +979,7 @@ header h1 {
   animation: gradient5 3s ease infinite;
 }
 
-//------------------------- About Section -------------------------
+// ------------------------- About Section -------------------------
 .about-intro-extra {
   font-weight: bolder;
   color: #04806f;
@@ -991,29 +991,28 @@ header h1 {
   animation: gradient4 3s ease infinite;
 }
 
-//------------------------- Slogun Section -------------------------
-.slogun-extra {
+.about-extra {
   letter-spacing: 5px;
   @include text-shadow(2px, 2px, 4px, rgba(0, 0, 0, 0.2));
 }
 
-.slogun-extra1 {
+.about-extra1 {
   letter-spacing: 2px;
   font-weight: 600;
   @include text-shadow(2px, 2px, 4px, rgba(0, 0, 0, 0.2));
 }
 
-.slogun-extra2 {
+.about-extra2 {
   letter-spacing: 2px;
   @include text-shadow(2px, 2px, 4px, rgba(0, 0, 0, 0.2));
 }
 
-//------------------------- Card Styles -------------------------
+// ------------------------- Card Styles -------------------------
 .card-body {
   border: 3px dashed rgb(145, 4, 4);
 }
 
-//------------------------- Responsive Styles -------------------------
+// ------------------------- Responsive Styles -------------------------
 @media (max-width: 768px) {
   .custom-image-row img {
     width: 30%;
@@ -1121,4 +1120,405 @@ header h1 {
 
 .card {
     margin-bottom: 15px; /* Add some spacing between cards */
+}
+
+//
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+/* Đổi tên class để tránh xung đột */
+.header-body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: #d7ffde;
+}
+
+.custom-html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 1.1px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-toggler {
+    transition: transform 0.3s ease-in-out;
+    background-color: #ffcc00;
+    border: none;
+}
+
+.navbar-toggler:hover {
+    transform: rotate(90deg);
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba%28255, 255, 255, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+/* Đổi tên class để tránh xung đột */
+.header-navbar {
+    animation: slideDown 0.5s forwards;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* Sử dụng linear gradient */
+    z-index: 2000
+  }
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.header-logo:hover {
+    animation: none;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-item.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.dropdown-menu {
+    animation: slideFadeIn 0.3s forwards;
+    transform-origin: top center;
+}
+
+@keyframes slideFadeIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-collapse .dropdown-menu {
+        position: static;
+        float: none;
+    }
+
+    .navbar-collapse .dropdown-item {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}
+//
+/* Sunny Header */
+.abouts-sunny-header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.abouts-sunny-header h4 {
+  color: #333;
+}
+
+.abouts-sunny-header h5.subheader {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Image Hover Effect */
+.abouts-custom-image-row img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  margin: 5px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.abouts-custom-image-row img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade-in Animation */
+.abouts-custom-image-row img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.abouts-custom-image-row img.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Grid */
+.abouts-custom-image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.abouts-custom-image-row a {
+  flex: 1 1 200px;
+  /* Flexbox để ảnh tự động co giãn */
+  margin: 5px;
+}
+
+@media (max-width: 768px) {
+  .abouts-custom-image-row a {
+      flex: 1 1 150px;
+      /* Điều chỉnh kích thước ảnh trên mobile */
+  }
+}
+//
+/* Đổi tên class để tránh xung đột */
+.newis-body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-header {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  /* Tạo khoảng cách phía trên */
+  background-color: #ffffff;
+  /* Màu nền trắng */
+  border: 2px solid #007bff;
+  /* Đường viền màu xanh */
+  border-radius: 10px;
+  /* Bo tròn các góc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Đổ bóng */
+  color: #007bff;
+  /* Màu chữ xanh */
+}
+
+.newis-header h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-news-item {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.newis-news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-news-img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  /* Chiều cao cố định cho khung hình ảnh */
+  overflow: hidden;
+}
+
+.newis-news-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Cắt hình ảnh để vừa với khung */
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-news-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 182, 193, 0.8);
+  /* Màu nền hồng nhạt */
+  color: white;
+  text-align: center;
+}
+
+.newis-news-name h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+  /* Màu chữ đậm */
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-news-description {
+  padding: 10px;
+  color: #555;
+  position: relative;
+  flex-grow: 1;
+}
+
+.newis-news-description textarea {
+  width: 100%;
+  height: 100px;
+  /* Chiều cao cố định cho textarea */
+  border: none;
+  resize: none;
+  overflow: hidden;
+  background: transparent;
+  color: #555;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-read-more {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: white;
+  padding: 0 5px;
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-expanded .newis-news-description textarea {
+  height: auto;
+  /* Hiển thị đầy đủ nội dung */
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-expanded .newis-read-more {
+  display: none;
+}
+
+/* Đổi tên class để tránh xung đột */
+.newis-news-origin {
+  padding: 10px;
+  color: #888;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f1f1f1;
+  text-align: right;
+  /* Canh phải */
+}
+
+.pagination {
+  justify-content: center;
+}
+//
+/* ... các style khác ... */
+
+/* Thay đổi style cho newis-news-description-content */
+.newis-news-description-content {
+  padding: 10px;
+  color: #555;
+  font-family: 'Roboto', sans-serif;
+  height: 100px; /* Chiều cao cố định */
+  overflow: hidden;
+}
+
+.newis-expanded .newis-news-description-content {
+  height: auto; /* Hiển thị đầy đủ nội dung khi mở rộng */
+}
+//
+.service-text {
+  //height: 100px; /* Điều chỉnh chiều cao phù hợp */
+  overflow: hidden;
+  border: 2px dashed #007bff; /* Thêm viền 2px, kiểu dashed, màu xanh dương */
+  text-align: center;
+}
+.service-item p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Số dòng hiển thị */
+  -webkit-box-orient: vertical;
+}
+.service-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: contain; /* Đảm bảo hình ảnh không bị méo */
+}
+* {
+  box-sizing: border-box;
+}
+/* filepath: d:\Code Web\NodeJS-BackEnd\BackEnd1 - ver3-UpToVercel\src\resources\scss\style.scss */
+.home-product-img {
+  width: 100%;
+  height: 300px; /* Điều chỉnh giá trị này để phù hợp với thiết kế của bạn */
+  object-fit: cover;
 }
