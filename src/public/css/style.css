@@ -1415,4 +1415,32 @@ header h1 {
   animation: shake 2s linear infinite; /* Áp dụng animation */
 }
 
+/* Style cho tooltip */
+.zalo-chat a {
+  position: relative;
+  display: inline-block;
+}
+
+.zalo-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  margin-left: 10px;
+}
+
+.zalo-chat a:hover .zalo-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
 /*# sourceMappingURL=style.css.map */
