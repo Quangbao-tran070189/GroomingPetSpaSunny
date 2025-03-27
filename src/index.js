@@ -51,6 +51,7 @@ console.log(`Running in ${nodeEnv} mode`);
 
 const route = require('./routes/index');
 const db = require('./config/db');
+const errorHandler = require('./middleware/errorHandler'); // Import errorHandler
 
 // Passport Config
 require('./config/passport')(passport);
@@ -115,12 +116,11 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
-app.get('/sitemap.xml', (req, res) => {
-  res.sendFile(path.join(__dirname, '../sitemap.xml')); // Hoặc đường dẫn đến public
-});
-
 // Routes initialization
 route(app);
+
+// Error handler - Place after all routes
+app.use(errorHandler); // Use errorHandler
 
 // Start server
 app.listen(port, () => {

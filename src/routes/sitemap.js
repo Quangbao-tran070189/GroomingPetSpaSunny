@@ -20,10 +20,12 @@ const STATIC_PAGES = [
 // Model paths (sử dụng path.join để đảm bảo tính tương thích)
 let Product, Stuff, Medicine, Newi;
 try {
+    debug('Đang tải models...');
     Product = require('../app/models/Product');
     Stuff = require('../app/models/Stuff');
     Medicine = require('../app/models/Medicine');
     Newi = require('../app/models/Newi');
+    debug('Tải models thành công.');
 } catch (e) {
     console.error('Lỗi khi tải model:', e);
     // Gửi phản hồi lỗi cho client thay vì throw Error
@@ -33,16 +35,20 @@ try {
 
 // Hàm tạo URL cho sitemap
 const addUrlsToSitemap = (smStream, items, prefix) => {
+    debug(`Thêm URLs cho: ${prefix}`);
     items?.forEach(item => {
         if (item?.slug) {
+            const url = `/${prefix}/${item.slug}`;
+            debug(`Thêm URL: ${url}`);
             smStream.write({
-                url: `/${prefix}/${item.slug}`,
+                url: url,
                 changefreq: 'weekly',
                 priority: 0.8,
                 lastmod: item.updatedAt?.toISOString() || new Date().toISOString()
             });
         }
     });
+    debug(`Hoàn thành thêm URLs cho: ${prefix}`);
 };
 
 // Middleware nén
@@ -51,11 +57,14 @@ router.use(compression());
 router.get('/', async (req, res) => {
     let smStream;
     try {
+        debug('Bắt đầu xử lý yêu cầu sitemap');
+
         // Kiểm tra SITE_URL
         if (!SITE_URL || typeof SITE_URL !== 'string' || !SITE_URL.startsWith('https://')) {
             console.error('SITE_URL không hợp lệ:', SITE_URL);
             return res.status(500).json({ error: 'SITE_URL không hợp lệ' });
         }
+        debug(`SITE_URL hợp lệ: ${SITE_URL}`);
 
         // Kiểm tra cache
         const cachedSitemap = cache.get('sitemap');
@@ -69,14 +78,18 @@ router.get('/', async (req, res) => {
             hostname: SITE_URL,
             cacheTime: CACHE_DURATION
         });
+        debug(`SitemapStream được khởi tạo với hostname: ${SITE_URL} và cacheTime: ${CACHE_DURATION}`);
 
         // Thêm các trang tĩnh
+        debug('Thêm các trang tĩnh');
         STATIC_PAGES.forEach(page => {
+            debug(`Thêm trang tĩnh: ${page.url}`);
             smStream.write({
                 ...page,
                 lastmod: new Date().toISOString()
             });
         });
+        debug('Hoàn thành thêm các trang tĩnh');
 
         // Lấy dữ liệu từ database
         try {
@@ -102,11 +115,13 @@ router.get('/', async (req, res) => {
         }
 
         smStream.end();
+        debug('Kết thúc stream sitemap');
         const sitemap = await streamToPromise(smStream);
         debug('Sitemap đã được tạo thành công');
 
         // Cache sitemap
         cache.put('sitemap', sitemap, CACHE_DURATION);
+        debug('Sitemap đã được cache');
 
         return sendSitemap(res, sitemap);
 
@@ -117,6 +132,7 @@ router.get('/', async (req, res) => {
         if (smStream) {
             try {
                 smStream.end();
+                debug('Stream sitemap đã được đóng sau lỗi');
             } catch (streamError) {
                 console.error('Lỗi khi đóng stream:', streamError);
             }
@@ -130,17 +146,25 @@ router.get('/', async (req, res) => {
 });
 
 function sendSitemap(res, sitemap) {
+    debug('Gửi sitemap cho client');
     res.header({
         'Content-Type': 'application/xml',
         'Content-Length': Buffer.byteLength(sitemap),
         'Cache-Control': `public, max-age=${CACHE_DURATION / 1000}`,
         'Last-Modified': new Date().toUTCString()
     });
-    return res.send(sitemap.toString());
+    res.send(sitemap.toString());
+    debug('Sitemap đã được gửi thành công');
 }
 
 // Xử lý cleanup
-process.on('SIGTERM', () => cache.clear());
-process.on('SIGINT', () => cache.clear());
+process.on('SIGTERM', () => {
+    debug('Nhận tín hiệu SIGTERM, xóa cache');
+    cache.clear();
+});
+process.on('SIGINT', () => {
+    debug('Nhận tín hiệu SIGINT, xóa cache');
+    cache.clear();
+});
 
 module.exports = router;

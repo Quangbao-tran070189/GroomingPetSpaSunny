@@ -11,7 +11,7 @@ const siteRouter = require('./site');
 const usersRouter = require('./users');
 const adminRouter = require('./admin');
 //const sitemapRoute = require('./routes/sitemap');
-//const sitemapRoute = require('./sitemap'); // Adjust path if needed
+const sitemapRoute = require('./sitemap'); // Adjust path if needed
 
 //app.use(sitemapRoute);
 
@@ -26,7 +26,7 @@ function route(app) {
   app.use('/admin', adminRouter);
   //app.use('/abouts', siteRouter);
   app.use('/', siteRouter);
-  //app.use('/sitemap.xml', sitemapRoute); // Register the sitemap route
+  app.use('/sitemap.xml', sitemapRoute); // Register the sitemap route
 }
 
 module.exports = route;
