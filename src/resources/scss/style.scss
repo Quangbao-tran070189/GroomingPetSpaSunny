@@ -1498,7 +1498,7 @@ header h1 {
 .service-text {
   //height: 100px; /* Điều chỉnh chiều cao phù hợp */
   overflow: hidden;
-  border: 2px dashed #007bff; /* Thêm viền 2px, kiểu dashed, màu xanh dương */
+  border: 2px dashed #cefc05; /* Thêm viền 2px, kiểu dashed, màu xanh dương */
   text-align: center;
 }
 .service-item p {
@@ -1524,57 +1524,77 @@ header h1 {
 }
 //
 /* filepath: d:\Code Web\NodeJS-BackEnd\BackEnd1 - ver3-UpToVercel\src\resources\scss\style.scss */
+/* filepath: d:\Code Web\NodeJS-BackEnd\BackEnd1 - ver3-UpToVercel\src\resources\scss\style.scss */
+/* Style cho Zalo chat icon */
 .zalo-chat {
   position: fixed;
   bottom: 20px;
   left: 20px;
   z-index: 9999; /* Đảm bảo logo luôn nằm trên cùng */
+
+  a {
+    position: relative;
+    display: inline-block;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Tạo hình tròn cho logo */
+    box-shadow: 0 0 5px rgba(212, 248, 6, 0.7), /* Màu xanh dương */
+                0 0 10px rgba(243, 11, 3, 0.5), /* Màu xanh dương nhạt hơn */
+                0 0 15px rgba(3, 247, 234, 0.3); /* Màu xanh dương rất nhạt */
+    animation: pulse 2s linear infinite; /* Áp dụng animation nhịp tim */
+  }
+
+  /* Hiệu ứng nhịp tim */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f6fa05, #fa2702, #639EE1, #809AD3); /* Gradient màu xanh */
+    z-index: -1;
+    opacity: 0;
+    transform: scale(1);
+    animation: pulse 2s linear infinite;
+  }
+
+  /* Style cho tooltip */
+  .zalo-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+  }
+
+  a:hover .zalo-tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
-
-/* filepath: d:\Code Web\NodeJS-BackEnd\BackEnd1 - ver3-UpToVercel\src\resources\scss\style.scss */
-/* Keyframes animation cho hiệu ứng rung rung */
-@keyframes shake {
-  0% { transform: translate(0); }
-  25% { transform: translate(-5px, 0); }
-  50% { transform: translate(5px, 0); }
-  75% { transform: translate(-5px, 0); }
-  100% { transform: translate(0); }
+/* Keyframes animation cho hiệu ứng nhịp tim */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
 }
-
-/* Áp dụng animation cho class .zalo-chat img */
-.zalo-chat img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* Tạo hình tròn cho logo */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng đổ bóng */
-  animation: shake 2s linear infinite; /* Áp dụng animation */
-}
-/* Style cho tooltip */
-.zalo-chat a {
-  position: relative;
-  display: inline-block;
-}
-
-.zalo-tooltip {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
-  margin-left: 10px;
-}
-
-.zalo-chat a:hover .zalo-tooltip {
-  opacity: 1;
-  visibility: visible;
-}
-//
