@@ -47,6 +47,7 @@ const hbs = exphbs.create({
 
 const port = process.env.PORT || 3000;
 const nodeEnv = process.env.NODE_ENV || 'development';
+//const maxDuration = process.env.MAX_DURATION || 10; // Thời gian timeout mặc định là 10 giây
 console.log(`Running in ${nodeEnv} mode`);
 
 const route = require('./routes/index');

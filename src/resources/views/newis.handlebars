@@ -1,30 +1,32 @@
 <header class="newis-header">
     <h2 class="slogun-extra2">Bảng Tin Chăm Sóc Thú Cưng Chó & Mèo</h2>
+    <meta name="description" content="Cập nhật tin tức mới nhất về chăm sóc thú cưng chó mèo tại Sunny Pet Spa Bà Rịa.">
 </header>
 <div class="container">
     <div class="row">
         {{#each newis}}
-        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="col-lg-3 col-md-6 mb-4" itemscope itemtype="http://schema.org/NewsArticle">
             <div class="newis-news-item">
                 <div class="newis-news-img">
-                    <a href="/newis/{{this.slug}}">
-                        <img src="{{this.image}}" alt="{{this.name}}">
+                    <a href="/newis/{{this.slug}}" itemprop="url">
+                        <img src="{{this.image}}" alt="{{this.name}}" itemprop="image">
                     </a>
                     <div class="newis-news-name">
-                        <a href="/newis/{{this.slug}}">
-                            <h2>{{this.name}}</h2>
+                        <a href="/newis/{{this.slug}}" itemprop="url">
+                            <h2 itemprop="headline">{{this.name}}</h2>
                         </a>
                     </div>
                 </div>
                 <div class="newis-news-description">
-                    <textarea readonly>{{this.description}}</textarea>
+                    <div class="newis-news-description-content" itemprop="description">{{this.description}}</div>
                 </div>
-                <a href="/newis/{{this.slug}}">
+                <a href="/newis/{{this.slug}}" itemprop="url">
                     <div class="newis-read-more" onclick="toggleDescription(this)">Xem thêm</div>
                 </a>
                 <div class="newis-news-origin">
-                    <strong>By:</strong> {{this.origin}}
+                    <strong>By:</strong> <span itemprop="author">{{this.origin}}</span>
                 </div>
+                <meta itemprop="datePublished" content="{{this.createdAt}}">
             </div>
         </div>
         {{/each}}
@@ -33,7 +35,7 @@
         <ul class="pagination">
             {{#if (gt currentPage 1)}}
             <li class="page-item">
-                <a class="page-link" href="?page={{subtract currentPage 1}}" aria-label="Previous">
+                <a class="page-link" href="?page={{subtract currentPage 1}}" aria-label="Previous" rel="prev">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -45,7 +47,7 @@
             {{/each}}
             {{#if (lt currentPage totalPages)}}
             <li class="page-item">
-                <a class="page-link" href="?page={{add currentPage 1}}" aria-label="Next">
+                <a class="page-link" href="?page={{add currentPage 1}}" aria-label="Next" rel="next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
